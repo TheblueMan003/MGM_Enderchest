@@ -1,0 +1,143 @@
+package main
+
+enum menu{
+	none,
+	main,
+	card_menu,
+	cards_get,
+	cards_store,
+	particules,
+	hats,
+	debug
+}
+enum debugmode{
+	None,
+	Particules,
+	Hat
+}
+MENU Menu
+DEBUGMODE DMode
+INT Time
+
+def particuleRecieved(int parti){
+	with(@e[tag=target]){
+		if (parti < inv.nbParticules){
+			bool unlocked = false
+			switch(parti,1024){
+				int $m = fromconst(inv.nbParticules)
+				forgenerate($i,0,$m){
+					$i -> if (!inv.hasParticule_$i){unlocked=true}
+					$i -> inv.hasParticule_$i = true
+				}
+			}
+			if (unlocked){
+				title(@s,title," ")
+				title(@s,subtitle,"Your recieved a particles trail!")
+				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+			}
+		}
+		untag(target)
+	}
+}
+
+def hatRecieved(int parti){
+	with(@e[tag=target]){
+		if (parti < inv.nbHats){
+			bool unlocked = false
+			
+			switch(parti,1024){
+				int $m = fromconst(inv.nbHats)
+				forgenerate($i,0,$m){
+					$i -> if (!inv.hasHat_$i){unlocked=true}
+					$i -> inv.hasHat_$i = true
+				}
+			}
+			if (unlocked){
+				title(@s,title," ")
+				title(@s,subtitle,"Your recieved a hat!")
+				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+			}
+		}
+		untag(target)
+	}
+}
+def resetTime(){
+	Time = 0	
+}
+def ticking main(){
+	with(@a,true){
+		Menu := none
+		inv.hasParticule_0 = true
+		inv.hasHat_0 = true
+		Time++
+		int s = Time%$eval(10*60*20)
+		int t = Time/$eval(10*60*20)
+		int index = t/2
+
+		index += 1
+		if (s == 0){
+			if (t % 2 == 0){
+				tag(target)
+				particuleRecieved(index%inv.nbParticules-1)
+			}
+			else{
+				tag(target)
+				hatRecieved(index%inv.nbHats)
+			}
+		}
+		
+		inv.SelectedHat(null)
+		input.whileSneak(){
+			inv.SelectedParticule(null)
+		}
+		input.whileWalk(){
+			inv.SelectedParticule(null)
+		}
+		input.whileSprint(){
+			inv.SelectedParticule(null)
+		}
+		input.onOpenEnderChest(){
+			Menu = main
+			menu.start()
+		}
+		input.onClick(){
+			float dis = 100
+			
+			raycast.shoot(dis,1,@p[distance=..1,tag=!debug]){
+				if (DMode == Particules){
+					int parti = inv.SelectedParticuleIndex
+					tag(@a[distance=..2,tag=!debug],target)
+					particuleRecieved(parti)
+					if (@a[distance=..2,tag=!debug]){
+						print((@a[distance=..2,tag=!debug],gold),(" was given a particles trail by ",yellow),(@a[tag=shooter,limit=1],gold))
+					}
+				}
+				if (DMode == Hat){
+					int hat = inv.SelectedHatIndex
+					tag(@a[distance=..2,tag=!debug],target)
+					hatRecieved(hat)
+					if (@a[distance=..2,tag=!debug]){
+						print((@a[distance=..2,tag=!debug],gold),(" was given a hat by ",yellow),(@a[tag=shooter,limit=1],gold))
+					}
+				}
+			}
+		}
+		input.onJump(){
+			Menu = none
+		}
+		input.onDrop(){
+			if (Menu > none){
+				kill(@e[type=item,distance=..2,nbt=!{Item:{id:"minecraft:filled_map"}}])
+			}
+		}
+		switch(Menu){
+			main -> menu.manage()
+			card_menu -> card_lb.manage()
+			cards_get -> page.manage()
+			cards_store -> card_store.manage()
+			particules -> particules.manage()
+			hats -> hats.manage()
+			debug -> debug.manage()
+		}
+	}
+}

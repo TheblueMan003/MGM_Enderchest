@@ -1,0 +1,71 @@
+package card_store
+
+def reload(){
+	forgenerate($i,0,26){
+		/replaceitem entity @s enderchest.$i minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}}
+	}
+	/replaceitem entity @s enderchest.13 minecraft:air
+	/replaceitem entity @s enderchest.26 minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}}
+}
+def start(){
+	reload()
+	main.Menu = cards_store
+}
+def manage(){
+	bool added=false
+	int id
+	int nb
+	forgenerate($i,0,13){
+			if (@s[nbt={EnderItems:[{Slot:$ib,id:"minecraft:filled_map"}]}]){
+			cmdstore(id,data get entity @s EnderItems[$i].tag.map)
+			cmdstore(nb,data get entity @s EnderItems[$i].Count 1)
+			if (id > 0){
+				addItem(id,nb)
+			}
+			/playsound minecraft:entity.ender_eye.death master @s ~ ~ ~ 1 0
+			card_lb.start()
+			added = true
+		}
+	}
+	forgenerate($i,14,26){
+			if (@s[nbt={EnderItems:[{Slot:$ib,id:"minecraft:filled_map"}]}]){
+			cmdstore(id,data get entity @s EnderItems[$eval($i-1)].tag.map)
+			cmdstore(nb,data get entity @s EnderItems[$eval($i-1)].Count 1)
+			if (id > 0){
+				addItem(id,nb)
+			}
+			else{
+				cmdstore(id,data get entity @s EnderItems[$i].tag.map)
+				cmdstore(nb,data get entity @s EnderItems[$i].Count 1)
+				if (id > 0){
+					addItem(id,nb)
+				}
+			}
+			/playsound minecraft:entity.ender_eye.death master @s ~ ~ ~ 1 0
+			card_lb.start()
+			added = true
+			clear(@s,barrier)
+		}
+	}
+	int c
+	cmdstore(c,clear @s green_stained_glass_pane)
+	if (!added && !@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
+		clear(@s,barrier)
+		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 0
+		card_lb.start()
+	}
+ elseif (!added){
+		reload()
+	}
+}
+
+
+def addItem(int id, int nb){
+	int $max = fromconst(inv.nbCard)
+	forgenerate($i,0,$eval($max-1)){
+		int $name = fromenum(card, $i)
+		if (id == $name.map){
+			inv.hasCard_$i += nb
+		}
+	}
+}

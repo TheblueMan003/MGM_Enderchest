@@ -1,0 +1,68 @@
+package inv
+
+forgenerate($i,0,1023){
+	INT hasCard_$i
+}
+forgenerate($i,0,1023){
+	INT hasParticule_$i
+}
+forgenerate($i,0,1023){
+	INT hasHat_$i
+}
+
+FUNCTION<(parti),(void)> SelectedParticule
+INT SelectedParticuleIndex
+FUNCTION<(hat),(void)> SelectedHat
+INT SelectedHatIndex
+
+const int maxPerSlot =5
+
+enum("card","card.csv","CSV")
+const int nbCard = $card.length
+const int nbpage = $eval(($card.length/21)-1)eval$
+
+enum("particules","particules.csv","CSV")
+const int nbParticules = $particules.length
+const int nbpageparticules = $eval(($particules.length/21)-1)eval$
+
+enum("hats","hats.csv","CSV")
+const int nbHats = $hats.length
+const int nbpagehats = $eval(($hats.length/21)-1)eval$
+
+
+def giveAllCard(){
+	int $m = fromconst(nbCard)
+	forgenerate($i,0,$m){
+		hasCard_$i ++
+	}
+}
+def giveAllParticule(){
+	int $m = fromconst(nbParticules)
+	forgenerate($i,0,$m){
+		hasParticule_$i = true
+	}
+}
+def giveAllHat(){
+	int $m = fromconst(nbHats)
+	forgenerate($i,0,$m){
+		hasHat_$i = true
+	}
+}
+def takeAllCard(){
+	int $m = fromconst(nbCard)
+	forgenerate($i,0,$m){
+		hasCard_$i = 0
+	}
+}
+def takeAllParticule(){
+	int $m = fromconst(nbParticules)
+	forgenerate($i,0,$m){
+		hasParticule_$i = false
+	}
+}
+def takeAllHat(){
+	int $m = fromconst(nbHats)
+	forgenerate($i,0,$m){
+		hasHat_$i = false
+	}
+}

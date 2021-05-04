@@ -1,0 +1,65 @@
+package particules_func
+
+def part_0(parti _){
+	
+}
+def part_1(parti _){
+	/particle minecraft:note ~ ~2 ~ 0.5 0.5 0.5 1 1
+}
+def part_2(parti _){
+	/particle minecraft:effect ~ ~2 ~ 0.5 0.5 0.5 1 1
+}
+def part_3(parti _){
+	/particle minecraft:dragon_breath ~ ~2 ~ 0.5 0.5 0.5 .1 1
+}
+def part_4(parti _){
+	/particle minecraft:firework ~ ~2 ~ 0.5 0.5 0.5 .1 1
+}
+def part_5(parti _){
+	/particle minecraft:dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_6(parti _){
+	/particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_7(parti _){
+	/particle minecraft:dust 1 0.5 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_8(parti _){
+	/particle minecraft:dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_9(parti _){
+	/particle minecraft:dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_10(parti _){
+	/particle minecraft:dust 0 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_11(parti _){
+	/particle minecraft:dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_12(parti _){
+	/particle minecraft:dust 1 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_13(parti _){
+	/particle minecraft:dust 0 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+}
+def part_14(parti _){
+	/particle minecraft:flame ~ ~1 ~ 0.5 0.5 0.5 .1 1
+}
+def part_15(parti _){
+	/particle minecraft:soul ~ ~2 ~ 0.5 0.5 0.5 .1 1
+}
+def part_16(parti _){
+	/particle minecraft:enchant ~ ~1 ~ 0.5 0.5 0.5 .1 1
+}
+def part_17(parti _){
+	/particle minecraft:angry_villager ~ ~2 ~ 0.5 0.5 0.5 .1 1
+}
+def part_18(parti _){
+	/particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.5 0.5 .1 1
+}
+def part_19(parti _){
+	/particle minecraft:heart ~ ~1 ~ 0.5 0.5 0.5 .1 1
+}
+def part_20(parti _){
+	/particle minecraft:campfire_cosy_smoke ~ ~ ~
+}

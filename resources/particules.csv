@@ -1,0 +1,22 @@
+id;name;desc;item
+part_0;"None";"You are too cool for particles!";barrier
+part_1;"Notes";"Do you like jazz?";note_block
+part_2;"Potions";"What did you take?";potion
+part_3;"Dragon Breath";"You need a mint?";dragon_breath
+part_4;"Firework";"Firework";firework_rocket
+part_5;"White";"Just white particles.";white_dye
+part_6;"Red";"Just red particles.";red_dye
+part_7;"Orange";"Just orange particles.";orange_dye
+part_8;"Yellow";"Just yellow particles.";yellow_dye
+part_9;"Lime";"Just lime particles.";lime_dye
+part_10;"Aqua";"Just aqua particles.";light_blue_dye
+part_11;"Blue";"Just blue particles.";blue_dye
+part_12;"Purple";"Just purple particles.";purple_dye
+part_13;"Black";"Just black particles.";black_dye
+part_14;"Flame";"I am on fire!";flint_and_steel
+part_15;"Soul";"Spooky!";soul_sand
+part_16;"Enchanted";"I am enchanted!";enchanted_book
+part_17;"Angry";"I am angry! Hi angry! I am dad.";villager_spawn_egg
+part_18;"Totem of Undying";"Legend never dies!";totem_of_undying
+part_19;"Heart";"Love you! ❤";apple
+part_20;"Smoke";"The floor is hot?";campfire
