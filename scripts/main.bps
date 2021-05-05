@@ -19,7 +19,7 @@ MENU Menu
 DEBUGMODE DMode
 INT Time
 
-def particuleRecieved(int parti){
+def particuleRecieved(int parti):bool{
 	with(@e[tag=target]){
 		if (parti < inv.nbParticules){
 			bool unlocked = false
@@ -33,14 +33,17 @@ def particuleRecieved(int parti){
 			if (unlocked){
 				title(@s,title," ")
 				title(@s,subtitle,"Your recieved a particles trail!")
-				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+				at(@s){
+					/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+				}
 			}
+			return(unlocked)
 		}
 		untag(target)
 	}
 }
 
-def hatRecieved(int parti){
+def hatRecieved(int parti):bool{
 	with(@e[tag=target]){
 		if (parti < inv.nbHats){
 			bool unlocked = false
@@ -55,8 +58,11 @@ def hatRecieved(int parti){
 			if (unlocked){
 				title(@s,title," ")
 				title(@s,subtitle,"Your recieved a hat!")
+				at(@s){
 				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+				}
 			}
+			return(unlocked)
 		}
 		untag(target)
 	}
@@ -64,6 +70,7 @@ def hatRecieved(int parti){
 def resetTime(){
 	Time = 0	
 }
+INT Delay
 def ticking main(){
 	with(@a,true){
 		Menu := none
@@ -73,31 +80,42 @@ def ticking main(){
 		int s = Time%$eval(10*60*20)
 		int t = Time/$eval(10*60*20)
 		int index = t/2
-
+		bool give
 		index += 1
+		positioned(~ -1 ~){
 		if (s == 0){
-			if (t % 2 == 0){
+			int rng = Random.Range(0,2)
+			if (rng == 0){
 				tag(target)
-				particuleRecieved(index%inv.nbParticules-1)
+				give = particuleRecieved(Random.Range(1,inv.nbParticules))
 			}
 			else{
 				tag(target)
-				hatRecieved(index%inv.nbHats)
+				give = hatRecieved(Random.Range(1,inv.nbHats))
+			}
+			if (!give){
+				Time--	
 			}
 		}
-		
-		inv.SelectedHat(null)
+	}
+		if (Menu == none){
+			inv.SelectedHat(null)
+		}
 		input.whileSneak(){
 			inv.SelectedParticule(null)
+			if (Delay <= 0){Menu = none}
 		}
 		input.whileWalk(){
 			inv.SelectedParticule(null)
 		}
 		input.whileSprint(){
 			inv.SelectedParticule(null)
+			if (Delay <= 0){Menu = none}
 		}
+		if (Delay > 0){Delay--}
 		input.onOpenEnderChest(){
 			Menu = main
+			Delay = 20
 			menu.start()
 		}
 		input.onClick(){
