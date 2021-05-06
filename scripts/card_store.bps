@@ -6,6 +6,7 @@ def reload(){
 	}
 	/replaceitem entity @s enderchest.13 minecraft:air
 	/replaceitem entity @s enderchest.26 minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}}
+	main.clearItem()
 }
 def start(){
 	reload()

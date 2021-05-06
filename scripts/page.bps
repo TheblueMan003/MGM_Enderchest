@@ -54,6 +54,7 @@ def reload(){
 			$i-> page_$i()
 		}
 	}
+	main.clearItem()
 	clear(@s,player_head)
 }
 def left(){

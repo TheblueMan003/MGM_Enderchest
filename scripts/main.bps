@@ -15,6 +15,17 @@ enum debugmode{
 	Particules,
 	Hat
 }
+def clearItem(){
+	itemtags banitem = barrier,map,red_stained_glass,green_stained_glass_pane, pumpkin_seeds, gray_stained_glass_pane, chest, hopper
+	forgenerate($i,particules){
+		itemtags banitem = $i.item
+	}
+	forgenerate($i,hats){
+		itemtags banitem = $i.item
+	}
+
+	/clear @s #mgminv:banitem
+}
 MENU Menu
 DEBUGMODE DMode
 INT Time
@@ -100,6 +111,9 @@ def ticking main(){
 	}
 		if (Menu == none){
 			inv.SelectedHat(null)
+		}
+		else{
+			main.clearItem()	
 		}
 		input.whileSneak(){
 			inv.SelectedParticule(null)
