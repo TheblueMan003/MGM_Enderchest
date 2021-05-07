@@ -1,43 +1,43 @@
-id;name;desc;item;hat;data
-part_0;"None";"You are too cool for hats!";barrier;air;CustomModelData:0
-part_1;"Pumpkin";"There is no enderman on this server!";carved_pumpkin;carved_pumpkin;CustomModelData:0
-part_2;"Creeper";"Boom boom boom!";creeper_head;creeper_head;CustomModelData:0
-part_3;"Skeleton Skull";"Sans?";skeleton_skull;skeleton_skull;CustomModelData:0
-part_4;"Wither Skull";"Do not spawn a wither.";wither_skeleton_skull;wither_skeleton_skull;CustomModelData:0
-part_5;"Dragon Head";"Nom Nom";dragon_head;dragon_head;CustomModelData:0
-part_6;"Zombie";"I am out of idea for this one.";zombie_head;zombie_head;CustomModelData:0
-part_7;"Unicorn";"Unicorn";end_rod;end_rod;CustomModelData:0
-part_8;"Space Helmet";"To the moon!";glass;glass;CustomModelData:0
-part_9;"Coral Crown";"Save the ocean!";horn_coral_fan;horn_coral_fan;CustomModelData:0
-part_10;"Diamond";"diamond";diamond;diamond;CustomModelData:0
-part_11;"Turtle Helemt";"I like turtle";turtle_helmet;turtle_helmet;CustomModelData:0
-part_12;"Bedrock";"";bedrock;bedrock;CustomModelData:0
-part_13;"Blockception Hat";"Just a crafting table";crafting_table;crafting_table;CustomModelData:0
-part_14;"Collar";"";iron_trapdoor;iron_trapdoor;CustomModelData:0
-part_15;"Command Block";"I am a map maker!";command_block;command_block;CustomModelData:0
-part_16;"Honey";"Honey, I am home!";honey_block;honey_block;CustomModelData:0
-part_17;"Slime";"Ewwww";slime_block;slime_block;CustomModelData:0
-part_18;"Oak";"Team Tree!";oak_sapling;oak_sapling;CustomModelData:0
-part_19;"Torch";"You had an idea? I hope it is good.";torch;torch;CustomModelData:0
-part_20;"Flower";"Peace";oxeye_daisy;oxeye_daisy;CustomModelData:0
-part_21;"Leaves";"Camouflage";oak_leaves;oak_leaves;CustomModelData:0
-part_22;"Cactus";"Do not touch me";cactus;cactus;CustomModelData:0
-part_23;"Clock";"What time is it? It is Minigame mash time!";clock;clock;CustomModelData:0
-part_24;"TNT";"Do not blow the server.";tnt;tnt;CustomModelData:0
-part_25;"Sticky Piston";"https://trial.stickypiston.co/";sticky_piston;sticky_piston;CustomModelData:0
-part_26;"0.0";"Why do you look so surprised?";dispenser;dispenser;CustomModelData:0
-part_27;"0o0";"Happy boy.";dropper;dropper;CustomModelData:0
-part_28;"-_-";"I am watching you!";observer;observer;CustomModelData:0
-part_29;"CosmicCortexSP";"Thanks for hosting Minigame Mash.";player_head;player_head;SkullOwner:"CosmicCortexSP"
-part_30;"TheblueMan003";"Hi! I coded that ui.";player_head;player_head;SkullOwner:"TheblueMan003"
-part_31;"KittyCatElite";"He win everything.";player_head;player_head;SkullOwner:"KittyCatElite"
-part_32;"eonic";"The Boss of Stick Piston";player_head;player_head;SkullOwner:"eonic"
-part_33;"darkbrine_";"I am enchanted!";player_head;player_head;SkullOwner:"darkbrine_"
-part_34;"Mezimo";"Modpack.";player_head;player_head;SkullOwner:"Mezimo"
-part_35;"TheHappywheels1";"He is happy. I guess.";player_head;player_head;SkullOwner:"TheHappywheels1"
-part_36;"LegoBro";"He made Kill Streak.";player_head;player_head;SkullOwner:"LegoBro"
-part_37;"Jontohil2";"He made Disaster Star.";player_head;player_head;SkullOwner:"Jontohil2"
-part_38;"JevinLevin";"We need to overthrow him.";player_head;player_head;SkullOwner:"JevinLevin"
-part_39;"Captain";"He helped build the server.";player_head;player_head;SkullOwner:"Captain_Deadpool"
-part_40;"FalconReign";"";player_head;player_head;SkullOwner:"FalconReign"
-part_41;"Notch";"Maker of Minecraft";player_head;player_head;SkullOwner:"Notch"
+id;name;desc;item;hat;data;unlockable
+part_0;"None";"You are too cool for hats!";barrier;air;CustomModelData:0;1
+part_1;"Pumpkin";"There is no enderman on this server!";carved_pumpkin;carved_pumpkin;CustomModelData:0;1
+part_2;"Creeper";"Boom boom boom!";creeper_head;creeper_head;CustomModelData:0;1
+part_3;"Skeleton Skull";"Sans?";skeleton_skull;skeleton_skull;CustomModelData:0;1
+part_4;"Wither Skull";"Do not spawn a wither.";wither_skeleton_skull;wither_skeleton_skull;CustomModelData:0;1
+part_5;"Dragon Head";"Nom Nom";dragon_head;dragon_head;CustomModelData:0;1
+part_6;"Zombie";"I am out of idea for this one.";zombie_head;zombie_head;CustomModelData:0;1
+part_7;"Unicorn";"Unicorn";end_rod;end_rod;CustomModelData:0;1
+part_8;"Space Helmet";"To the moon!";glass;glass;CustomModelData:0;1
+part_9;"Coral Crown";"Save the ocean!";horn_coral_fan;horn_coral_fan;CustomModelData:0;1
+part_10;"Diamond";"diamond";diamond;diamond;CustomModelData:0;1
+part_11;"Turtle Helemt";"I like turtle";turtle_helmet;turtle_helmet;CustomModelData:0;1
+part_12;"Bedrock";"";bedrock;bedrock;CustomModelData:0;1
+part_13;"Blockception Hat";"Just a crafting table";crafting_table;crafting_table;CustomModelData:0;1
+part_14;"Collar";"";iron_trapdoor;iron_trapdoor;CustomModelData:0;1
+part_15;"Command Block";"I am a map maker!";command_block;command_block;CustomModelData:0;1
+part_16;"Honey";"Honey, I am home!";honey_block;honey_block;CustomModelData:0;1
+part_17;"Slime";"Ewwww";slime_block;slime_block;CustomModelData:0;1
+part_18;"Oak";"Team Tree!";oak_sapling;oak_sapling;CustomModelData:0;1
+part_19;"Torch";"You had an idea? I hope it is good.";torch;torch;CustomModelData:0;1
+part_20;"Flower";"Peace";oxeye_daisy;oxeye_daisy;CustomModelData:0;1
+part_21;"Leaves";"Camouflage";oak_leaves;oak_leaves;CustomModelData:0;1
+part_22;"Cactus";"Do not touch me";cactus;cactus;CustomModelData:0;1
+part_23;"Clock";"What time is it? It is Minigame mash time!";clock;clock;CustomModelData:0;1
+part_24;"TNT";"Do not blow the server.";tnt;tnt;CustomModelData:0;1
+part_25;"Sticky Piston";"https://trial.stickypiston.co/";sticky_piston;sticky_piston;CustomModelData:0;1
+part_26;"0.0";"Why do you look so surprised?";dispenser;dispenser;CustomModelData:0;1
+part_27;"0o0";"Happy boy.";dropper;dropper;CustomModelData:0;1
+part_28;"-_-";"I am watching you!";observer;observer;CustomModelData:0;1
+part_29;"CosmicCortexSP";"Thanks for hosting Minigame Mash.";player_head;player_head;SkullOwner:"CosmicCortexSP";1
+part_30;"TheblueMan003";"Hi! I coded that ui.";player_head;player_head;SkullOwner:"TheblueMan003";1
+part_31;"KittyCatElite";"He win everything.";player_head;player_head;SkullOwner:"KittyCatElite";1
+part_32;"eonic";"The head of StickyPiston";player_head;player_head;SkullOwner:"eonic";1
+part_33;"darkbrine_";"I am enchanted!";player_head;player_head;SkullOwner:"darkbrine_";1
+part_34;"Mezimo";"Modpack.";player_head;player_head;SkullOwner:"Mezimo";1
+part_35;"TheHappywheels1";"He is happy. I guess.";player_head;player_head;SkullOwner:"TheHappywheels1";1
+part_36;"LegoBro";"He made Kill Streak.";player_head;player_head;SkullOwner:"LegoBro";1
+part_37;"Jontohil2";"He made Disaster Star.";player_head;player_head;SkullOwner:"Jontohil2";1
+part_38;"JevinLevin";"We need to overthrow him.";player_head;player_head;SkullOwner:"JevinLevin";1
+part_39;"Captain";"He helped build the server.";player_head;player_head;SkullOwner:"Captain_Deadpool";1
+part_40;"FalconReign";"";player_head;player_head;SkullOwner:"FalconReign";1
+part_41;"Notch";"Maker of Minecraft";player_head;player_head;SkullOwner:"Notch";1

@@ -36,8 +36,9 @@ def particuleRecieved(int parti):bool{
 			bool unlocked = false
 			switch(parti,1024){
 				int $m = fromconst(inv.nbParticules)
-				forgenerate($i,0,$m){
-					$i -> if (!inv.hasParticule_$i){unlocked=true}
+				forgenerate($i,0,$eval($m-1)){
+					int $part = fromenum(particules,$i)
+					$i -> if (!inv.hasParticule_$i && $part.unlockable==1){unlocked=true}
 					$i -> inv.hasParticule_$i = true
 				}
 			}
@@ -61,8 +62,9 @@ def hatRecieved(int parti):bool{
 			
 			switch(parti,1024){
 				int $m = fromconst(inv.nbHats)
-				forgenerate($i,0,$m){
-					$i -> if (!inv.hasHat_$i){unlocked=true}
+				forgenerate($i,0,$eval($m-1)){
+					int $hat = fromenum(hats,$i)
+					$i -> if (!inv.hasHat_$i && $hat.unlockable==1){unlocked=true}
 					$i -> inv.hasHat_$i = true
 				}
 			}
