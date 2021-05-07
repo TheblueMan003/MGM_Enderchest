@@ -84,6 +84,9 @@ def resetTime(){
 	Time = 0	
 }
 INT Delay
+def forceUnlock(){
+	Time = $eval(10*60*20-1)
+}
 def ticking main(){
 	with(@a,true){
 		Menu := none
