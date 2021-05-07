@@ -27,3 +27,4 @@ replaceitem entity @s enderchest.25 minecraft:green_stained_glass_pane{display:{
 replaceitem entity @s enderchest.26 minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}}
 replaceitem entity @s enderchest.13 minecraft:air
 replaceitem entity @s enderchest.26 minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}}
+function mgminv:main/clearitem

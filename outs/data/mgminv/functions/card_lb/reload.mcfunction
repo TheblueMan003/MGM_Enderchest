@@ -28,3 +28,4 @@ replaceitem entity @s enderchest.26 minecraft:air 1
 replaceitem entity @s enderchest.12 minecraft:chest{display:{Name:'[{"text":"Retrieve Card","italic":false}]',Lore:['[{"text":"Click Here to retrieve","italic":false,"color":"yellow"}]','[{"text":"cards you stored.","italic":false,"color":"yellow"}]']}} 1
 replaceitem entity @s enderchest.14 minecraft:hopper{display:{Name:'[{"text":"Store Card","italic":false}]',Lore:['[{"text":"Click Here to store a card","italic":false,"color":"yellow"}]','[{"text":"so you can get it back later.","italic":false,"color":"yellow"}]']}} 1
 replaceitem entity @s enderchest.26 minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}} 1
+function mgminv:main/clearitem

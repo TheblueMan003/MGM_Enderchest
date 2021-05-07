@@ -1,4 +1,4 @@
-scoreboard players set @s mgmi.ITZ.CwrufS 11
+scoreboard players set @s mgmi.GbKQRjtBV8 11
 clear @s villager_spawn_egg
 function mgminv:particules/manage/particuleget
-scoreboard players set @s mgmi.p5TRgf0A2a 17
+scoreboard players set @s mgmi.rAQsB8xwXa 17

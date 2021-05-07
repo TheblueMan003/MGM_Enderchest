@@ -1,4 +1,4 @@
-scoreboard players set @s mgmi.ITZ.CwrufS 16
+scoreboard players set @s mgmi.GbKQRjtBV8 16
 clear @s purple_dye
 function mgminv:particules/manage/particuleget
-scoreboard players set @s mgmi.p5TRgf0A2a 12
+scoreboard players set @s mgmi.rAQsB8xwXa 12

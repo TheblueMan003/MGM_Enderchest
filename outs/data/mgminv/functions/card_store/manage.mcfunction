@@ -1,4 +1,4 @@
-scoreboard players set mgmi.5sF2B.1__n tbms.value 0
+scoreboard players set mgmi.LCNcmFNRhS tbms.value 0
 execute if entity @s[nbt={EnderItems:[{Slot:0b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_0
 execute if entity @s[nbt={EnderItems:[{Slot:1b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_1
 execute if entity @s[nbt={EnderItems:[{Slot:2b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_2
@@ -26,7 +26,7 @@ execute if entity @s[nbt={EnderItems:[{Slot:23b,id:"minecraft:filled_map"}]}] ru
 execute if entity @s[nbt={EnderItems:[{Slot:24b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_24
 execute if entity @s[nbt={EnderItems:[{Slot:25b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_25
 execute if entity @s[nbt={EnderItems:[{Slot:26b,id:"minecraft:filled_map"}]}] run function mgminv:card_store/manage/i_26
-execute store result score mgmi.cShNNztrkW tbms.value run clear @s green_stained_glass_pane
-scoreboard players set mgmi.lYXt1VYsao tbms.value 0
-execute unless score mgmi.5sF2B.1__n tbms.value matches 1.. unless entity @s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}] run function mgminv:card_store/manage/i_27
-execute if score mgmi.lYXt1VYsao tbms.value matches 0 unless score mgmi.5sF2B.1__n tbms.value matches 1.. run function mgminv:card_store/manage/i_29
+execute store result score mgmi.9xG02ZZ5nO tbms.value run clear @s green_stained_glass_pane
+scoreboard players set mgmi.2IbuGlUygG tbms.value 0
+execute unless score mgmi.LCNcmFNRhS tbms.value matches 1.. unless entity @s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}] run function mgminv:card_store/manage/i_27
+execute if score mgmi.2IbuGlUygG tbms.value matches 0 unless score mgmi.LCNcmFNRhS tbms.value matches 1.. run function mgminv:card_store/manage/i_29

@@ -1,2 +1,2 @@
 function mgminv:debug/reload
-scoreboard players set @s mgmi.F5maMFf8eB 7
+scoreboard players set @s mgmi.37aSwH2Jei 7

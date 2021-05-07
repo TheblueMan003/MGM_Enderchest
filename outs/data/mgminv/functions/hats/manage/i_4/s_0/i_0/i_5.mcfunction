@@ -1,4 +1,4 @@
 clear @s command_block
 function mgminv:hats/manage/hatget
-scoreboard players set @s mgmi.9Eh2H3Lhtc 5
-scoreboard players set @s mgmi.8o2YLtSEdI 15
+scoreboard players set @s mgmi.Z8xBuxgbvS 5
+scoreboard players set @s mgmi.p8HL4TeX8a 15

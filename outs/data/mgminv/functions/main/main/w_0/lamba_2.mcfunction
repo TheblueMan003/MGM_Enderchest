@@ -1,3 +1,3 @@
-scoreboard players operation mgmi.p5RNeUk2YX tbms.value = @s mgmi.ITZ.CwrufS
+scoreboard players operation mgmi.mdiKAaEUza tbms.value = @s mgmi.GbKQRjtBV8
 function mgminv:__multiplex__/function_from_parti_to__func
-execute if score @s mgmi.IRudIM8qWl matches ..0 run scoreboard players set @s mgmi.F5maMFf8eB 0
+execute if score @s mgmi.bv1GlK_vra matches ..0 run scoreboard players set @s mgmi.37aSwH2Jei 0

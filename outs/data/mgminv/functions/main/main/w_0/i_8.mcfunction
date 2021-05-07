@@ -1,2 +1,2 @@
-function mgminv:main/main/w_0/lamba_5
-scoreboard players set @s mgmi.l_fhs713kl 0
+function mgminv:main/main/w_0/lamba_3
+scoreboard players set @s mgmi.ijplW2tyvG 0

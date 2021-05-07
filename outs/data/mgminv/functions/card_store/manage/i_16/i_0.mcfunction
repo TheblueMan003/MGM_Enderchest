@@ -1,4 +1,4 @@
-scoreboard players set mgmi.yaBGmA.w_y tbms.value 1
-scoreboard players operation mgmi.p2Mj5.cOai tbms.value = mgmi.FWRw_zp4K. tbms.value
-scoreboard players operation mgmi.x_8YhyKcJs tbms.value = mgmi.gNxbz6ikGt tbms.value
+scoreboard players set mgmi.0nwR45VjSW tbms.value 1
+scoreboard players operation mgmi.1ELyuqQpIm tbms.value = mgmi.yeIKPGakpa tbms.value
+scoreboard players operation mgmi.XuPQtrkzhW tbms.value = mgmi.jtZy9ptE0a tbms.value
 function mgminv:card_store/additem
