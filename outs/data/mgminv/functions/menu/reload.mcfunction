@@ -29,3 +29,4 @@ replaceitem entity @s enderchest.11 minecraft:pumpkin_seeds{display:{Name:'[{"te
 replaceitem entity @s enderchest.13 minecraft:map{display:{Name:'[{"text":"Cards","italic":false}]'}} 1
 replaceitem entity @s enderchest.15 minecraft:creeper_head{display:{Name:'[{"text":"Hats","italic":false,"color":"white"}]'}} 1
 execute if entity @s[tag=debug] run replaceitem entity @s enderchest.26 minecraft:blue_stained_glass_pane{display:{Name:'[{"text":"Debug","italic":false}]'}} 1
+function mgminv:main/clearitem

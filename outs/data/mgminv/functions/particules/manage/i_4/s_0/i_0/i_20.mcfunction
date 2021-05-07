@@ -1,4 +1,4 @@
-scoreboard players set @s mgmi.ITZ.CwrufS 20
+scoreboard players set @s mgmi.GbKQRjtBV8 20
 clear @s campfire
 function mgminv:particules/manage/particuleget
-scoreboard players set @s mgmi.p5TRgf0A2a 20
+scoreboard players set @s mgmi.rAQsB8xwXa 20

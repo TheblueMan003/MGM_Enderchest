@@ -1,2 +1,2 @@
 function mgminv:card_store/reload
-scoreboard players set @s mgmi.F5maMFf8eB 4
+scoreboard players set @s mgmi.37aSwH2Jei 4

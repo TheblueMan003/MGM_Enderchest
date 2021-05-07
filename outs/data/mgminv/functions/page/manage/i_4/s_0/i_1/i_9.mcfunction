@@ -1,3 +1,3 @@
-scoreboard players remove @s mgmi.zFzSvoZxdG 1
+scoreboard players remove @s mgmi.elvzi8PH8G 1
 give @s filled_map{map:0,display:{Name:'[{"text":"Place Holder","color":"green","italic":false}]'}}
 function mgminv:page/manage/cardget

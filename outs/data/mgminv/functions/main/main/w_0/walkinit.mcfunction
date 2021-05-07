@@ -1,1 +1,1 @@
-scoreboard players set @s mgmi.adp73M4VaB 0
+scoreboard players set @s mgmi..RzsJ9.Dja 0

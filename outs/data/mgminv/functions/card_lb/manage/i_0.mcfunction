@@ -1,4 +1,4 @@
-scoreboard players set mgmi.uo0dV65JVA tbms.value 1
+scoreboard players set mgmi.MRtUBT4ON4 tbms.value 1
 clear @s chest
 playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
 function mgminv:page/start

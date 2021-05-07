@@ -1,7 +1,7 @@
 tag @s add target
-scoreboard players set mgmi.QUhoWDFK4Q tbms.value 1
-scoreboard players operation mgmi.B0GpMFCyyq tbms.value = mgmi.yeobQwuk7g tbms.value
+scoreboard players set mgmi.cKPoNASezG tbms.value 1
+scoreboard players operation mgmi.hZ7bvuhPEG tbms.value = mgmi.AS9OjGgs_G tbms.value
 function mgminv:random/range
-scoreboard players operation mgmi.p7hCVZ1jiE tbms.value = mgmi.xWWa3V1L7j tbms.value
+scoreboard players operation mgmi.UTFsFIqxGG tbms.value = mgmi.mpVEfKfCCG tbms.value
 function mgminv:main/hatrecieved
-scoreboard players operation mgmi.Z6WwwgTcdF tbms.value = mgmi.rtfV9E2UpW tbms.value
+scoreboard players operation mgmi.HDrz4GJwQG tbms.value = mgmi.R5RscZBUEa tbms.value
