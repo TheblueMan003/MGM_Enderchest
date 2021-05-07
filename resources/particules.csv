@@ -1,5 +1,5 @@
 id;name;desc;item;unlockable
-part_0;"None";"You are too cool for particles!";barrier;1
+part_0;"None";"You are too cool for particles!";barrier;0
 part_1;"Notes";"Do you like jazz?";note_block;1
 part_2;"Potions";"What did you take?";potion;1
 part_3;"Dragon Breath";"You need a mint?";dragon_breath;1
