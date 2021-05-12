@@ -1,7 +1,7 @@
 #==================================#
 In order to compile each variable to a unique scoreboard name the compiler use an offuscation map
 #==================================#
-variable count = 3619
+variable count = 3640
 alphabet = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._
 
 __class__ <===> mgmi.MJVMuesJaG
@@ -3505,6 +3505,27 @@ mgminv.particules_func.part_17._ <===> mgmi.qhPHlv5GBy
 mgminv.particules_func.part_18._ <===> mgmi.mcv2QdiMru
 mgminv.particules_func.part_19._ <===> mgmi.nqAsO9bnsq
 mgminv.particules_func.part_20._ <===> mgmi.8llUwpsAUO
+mgminv.particules_func.part_21._ <===> mgmi.9zqkvjlbVK
+mgminv.particules_func.part_22._ <===> mgmi.1usQBrc2qW
+mgminv.particules_func.part_23._ <===> mgmi.Z545NGzrcu
+mgminv.particules_func.part_24._ <===> mgmi.0p6HTJNj1O
+mgminv.particules_func.part_25._ <===> mgmi.l.j6nwrDlu
+mgminv.particules_func.part_26._ <===> mgmi.d5mAtEjrSG
+mgminv.particules_func.part_27._ <===> mgmi.ARa2qSTkzC
+mgminv.particules_func.part_28._ <===> mgmi.ik_X16qU54
+mgminv.particules_func.part_29._ <===> mgmi.h87v3ayh48
+mgminv.particules_func.part_30._ <===> mgmi.nqHUWNFUKu
+mgminv.particules_func.part_31._ <===> mgmi.Z9ITksy4CO
+mgminv.particules_func.part_32._ <===> mgmi.R4LnqAqS90
+mgminv.particules_func.part_33._ <===> mgmi.cQzPnO0LQW
+mgminv.particules_func.part_34._ <===> mgmi..RN.4AztiK
+mgminv.particules_func.part_35._ <===> mgmi.cICDcFFt4y
+mgminv.particules_func.part_36._ <===> mgmi.gIHcZyO3MC
+mgminv.particules_func.part_37._ <===> mgmi.qptzf17bgG
+mgminv.particules_func.part_38._ <===> mgmi.TzsW_o9hZm
+mgminv.particules_func.part_39._ <===> mgmi.ryOZb3krl4
+mgminv.particules_func.part_40._ <===> mgmi.9wEGQhmXuG
+mgminv.particules_func.part_41._ <===> mgmi..KI8PbfyvC
 mgminv.hats.Current <===> mgmi.F1nPNrBr8a
 mgminv.main.particulerecieved.w_0.i_0.unlocked <===> mgmi.ipHK46B8qi
 mgminv.main.particulerecieved.w_0.i_0._s.0 <===> mgmi.t.xiIfD1qK

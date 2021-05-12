@@ -67,6 +67,27 @@ scoreboard objectives add mgmi.wGyRSPekZO dummy
 scoreboard objectives add mgmi.TqqRNy2gge dummy
 scoreboard objectives add mgmi.7WnPy3KNUC dummy
 scoreboard objectives add mgmi.B_QwH4ntKa dummy
+scoreboard objectives add mgmi.kJLHEWxnnK dummy
+scoreboard objectives add mgmi.mmsEF_AUe4 dummy
+scoreboard objectives add mgmi.WjYoSaw7l0 dummy
+scoreboard objectives add mgmi.4gvXrp3jHW dummy
+scoreboard objectives add mgmi.EPLPv4BQtu dummy
+scoreboard objectives add mgmi.4gswK3wq_i dummy
+scoreboard objectives add mgmi.ITX21pDEoe dummy
+scoreboard objectives add mgmi.gIwjmaWMFG dummy
+scoreboard objectives add mgmi.zqEbVL7cCa dummy
+scoreboard objectives add mgmi.p_P.rQtcrK dummy
+scoreboard objectives add mgmi.jDgjPTiC84 dummy
+scoreboard objectives add mgmi.FZb2tJfNWS dummy
+scoreboard objectives add mgmi.71IghIjAPW dummy
+scoreboard objectives add mgmi.B6v53nOGOS dummy
+scoreboard objectives add mgmi.1xgbYLd_3i dummy
+scoreboard objectives add mgmi.Z5b.oRke2C dummy
+scoreboard objectives add mgmi.jrID.tc3NG dummy
+scoreboard objectives add mgmi.nEvH8CVdQ8 dummy
+scoreboard objectives add mgmi.B9GC51KHoC dummy
+scoreboard objectives add mgmi.nsNJhAPJFi dummy
+scoreboard objectives add mgmi.mkiKZ8X7Vu dummy
 scoreboard objectives add mgmi.IPupRe.uvG dummy
 scoreboard objectives add mgmi.HBfeO9fB7a dummy
 scoreboard objectives add mgmi.vumgx0c7FG dummy
@@ -131,8 +152,8 @@ scoreboard objectives add mgmi.9DQvq9OKmG minecraft.custom:minecraft.drop
 scoreboard players set mgmi.PxCUcjYziG tbms.value 1
 scoreboard players set mgmi.1ynViNr50S tbms.value 0
 scoreboard players set mgmi.UGl8vdbSja tbms.value 1
-scoreboard players set mgmi.75co.s94gG tbms.value 21
-scoreboard players set mgmi.2RYJsUY2MG tbms.value 0
+scoreboard players set mgmi.75co.s94gG tbms.value 42
+scoreboard players set mgmi.2RYJsUY2MG tbms.value 1
 scoreboard players set mgmi.AS9OjGgs_G tbms.value 42
 scoreboard players set mgmi.Z9gqMrg4Sa tbms.value 1
 scoreboard players set mgmi.gIWhwaaaAG tbms.value 2
