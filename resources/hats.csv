@@ -35,9 +35,30 @@ part_32;"eonic";"The head of StickyPiston";player_head;player_head;SkullOwner:"e
 part_33;"darkbrine_";"He make the descriptions.";player_head;player_head;SkullOwner:"darkbrine_";1
 part_34;"Mezimo";"He make the cards.";player_head;player_head;SkullOwner:"Mezimo";1
 part_35;"TheHappywheels1";"He is happy. I guess.";player_head;player_head;SkullOwner:"TheHappywheels1";1
-part_36;"LegoBro";"He made Kill Streak.";player_head;player_head;SkullOwner:"LegoBro";1
-part_37;"Jontohil2";"He made Disaster Star.";player_head;player_head;SkullOwner:"Jontohil2";1
+part_36;"LegoBro";"Creator of Killstreak.";player_head;player_head;SkullOwner:"LegoBro";1
+part_37;"Jontohil2";"Creator of Disaster Star.";player_head;player_head;SkullOwner:"Jontohil2";1
 part_38;"JevinLevin";"We need to overthrow him.";player_head;player_head;SkullOwner:"JevinLevin";1
 part_39;"Captain";"He helped build the server.";player_head;player_head;SkullOwner:"Captain_Deadpool";1
 part_40;"FalconReign";"";player_head;player_head;SkullOwner:"FalconReign";1
 part_41;"Notch";"Maker of Minecraft";player_head;player_head;SkullOwner:"Notch";1
+part_42;"iWacky";"Creator of Hide and seek Pirates";player_head;player_head;SkullOwner:"iWacky";1
+part_43;"AlexCY";"Creator of Hide and seek Pirates";player_head;player_head;SkullOwner:"AlexCY";1
+part_44;"It5meSame";"Creator of Hide and seek Pirates";player_head;player_head;SkullOwner:"It5meSame";1
+part_45;"AmirKaka";"Creator of Planet Parkour 1&2";player_head;player_head;SkullOwner:"AmirKaka";1
+part_46;"Flamingosaurus";"Creator of Sprint Racer";player_head;player_head;SkullOwner:"Flamingosaurus";1
+part_47;"HippehWizard";"Creator of Celestial Champions";player_head;player_head;SkullOwner:"HippehWizard";1
+part_48;"Calverin";"Creator of Celestial Champions";player_head;player_head;SkullOwner:"Calverin";1
+part_49;"TheRegularMex";"Creator of Celestial Champions";player_head;player_head;SkullOwner:"TheRegularMex";1
+part_50;"ThatGreenGem";"Creator of Relics from the Deck";player_head;player_head;SkullOwner:"ThatGreenGem";1
+part_51;"Lucuma";"Creator of Relics from the Deck";player_head;player_head;SkullOwner:"Lucuma";1
+part_52;"J_Brimstone";"Creator of Killstreak";player_head;player_head;SkullOwner:"J_Brimstone";1
+part_53;"thinkrocks12";"Creator of Killstreak";player_head;player_head;SkullOwner:"thinkrocks12";1
+part_54;"Tiger_Walts";"Sticky Piston Staff";player_head;player_head;SkullOwner:"Tiger_Walts";1
+part_55;"MarioHessel";"Sticky Piston Staff";player_head;player_head;SkullOwner:"MarioHessel";1
+part_56;"Alkali_metal";"Sticky Piston Staff";player_head;player_head;SkullOwner:"Alkali_metal";1
+part_57;"Zombieriser";"Sticky Piston Staff";player_head;player_head;SkullOwner:"Zombieriser";1
+part_58;"Hielke";"Creator of Spiral Parkour";player_head;player_head;SkullOwner:"Hielke";1
+part_59;"Scaffolding";"Cool hair cut";scaffolding;scaffolding;CustomModelData:0;1
+part_60;"Target";"Target";target;target;CustomModelData:0;1
+part_61;"Wither Rose";"Beautiful but deadly";wither_rose;wither_rose;CustomModelData:0;1
+part_62;"Sunflower";"You are my sunshine.";sunflower;sunflower;CustomModelData:0;1
