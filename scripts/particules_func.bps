@@ -103,26 +103,26 @@ def part_33(parti _){
 	/particle minecraft:happy_villager ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_34(parti _){
-	/particle minecraft:end_rod ~ ~1 ~ 0.5 0.5 0.5 0.1 1
-}
-def part_35(parti _){
 	/particle minecraft:ash ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
-def part_36(parti _){
+def part_35(parti _){
 	/particle minecraft:poof ~ ~1 ~ 0 0 0 0 1	
 }
-def part_37(parti _){
+def part_36(parti _){
 	/particle minecraft:block oak_log ~ ~1 ~ 0.5 0.5 0.5 1 1	
 }
-def part_38(parti _){
+def part_37(parti _){
 	/particle minecraft:block iron_block ~ ~1 ~ 0.5 0.5 0.5 1 1	
 }
-def part_39(parti _){
+def part_38(parti _){
 	/particle minecraft:block gold_block ~ ~1 ~ 0.5 0.5 0.5 1 1	
 }
-def part_40(parti _){
+def part_39(parti _){
 	/particle minecraft:block diamond_block ~ ~1 ~ 0.5 0.5 0.5 1 1	
 }
-def part_41(parti _){
+def part_40(parti _){
 	/particle minecraft:block netherite_block ~ ~1 ~ 0.5 0.5 0.5 1 1	
+}
+def part_41(parti _){
+	/particle minecraft:end_rod ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
