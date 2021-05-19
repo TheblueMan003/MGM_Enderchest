@@ -7,3 +7,7 @@ struct parti{
 struct hat{
 	
 }
+
+struct offset{
+	
+}

@@ -1,0 +1,22 @@
+id;name;desc;item;mob;base;mob_data;tp;unlockable
+part_0;"Bee";"BEEEEE!";honeycomb;bee;horse;{NoAI:1};tp07;0
+part_1;"Pig";"Old school.";porkchop;pig;mule;{NoAI:1};tp00;1
+part_2;"Cow";"Moo";leather;cow;mule;{NoAI:1};tp00;1
+part_3;"Chicken";"Don\'t be a coward.";feather;chicken;mule;{NoAI:1};tp00;1
+part_4;"Llama";"Might spit.";llama_spawn_egg;llama;horse;{NoAI:1};tp00;1
+part_5;"Bat";"Useless.";bat_spawn_egg;bat;horse;{NoAI:1};tp07;1
+part_6;"Spider";"Aracophobia";spider_eye;spider;mule;{NoAI:1};tp00;1
+part_7;"Slime";"Eww";slime_ball;slime;horse;{NoAI:1};tp00;1
+part_8;"Parrot";"Do not feed parrots cookies.";cookie;parrot;horse;{NoAI:1};tp07;1
+part_9;"Pufferfish";"cute.";pufferfish;pufferfish;horse;{NoAI:1};tp00;1
+part_10;"Zombie";"Will not bite.";rotten_flesh;zombie;horse;{NoAI:1,ArmorItems:[{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1}]};tp00;1
+part_11;"Skeleton";"He will bow before you.";bow;skeleton;horse;{NoAI:1,ArmorItems:[{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1},{id:"minecraft:stone_button",Count:1}]};tp00;1
+part_12;"Pillager";"It is pillage time!";crossbow;pillager;horse;{NoAI:1};tp00;1
+part_13;"Rabbit";"Lucky";rabbit_foot;rabbit;mule;{NoAI:1};tp00;1
+part_14;"Mooshroom";"Remember this mob?";red_mushroom;mooshroom;mule;{NoAI:1};tp00;1
+part_15;"Dolphin";"Dolphin Grace";water_bucket;dolphin;mule;{NoAI:1};tp00;1
+part_16;"Vex";"Spooky";iron_sword;vex;horse;{NoAI:1};tp07;1
+part_17;"Armor Stand";"Best entity";armor_stand;armor_stand;horse;{NoAI:1};tp00;1
+part_18;"Ocelot";"I\'m a cat person.";ocelot_spawn_egg;ocelot;mule;{NoAI:1};tp00;1
+part_19;"Fox";"Sneaky";sweet_berries;fox;mule;{NoAI:1};tp00;1
+part_20;"Turtle";"I like turtle.";scute;turtle;mule;{NoAI:1};tp00;1

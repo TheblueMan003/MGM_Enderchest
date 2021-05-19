@@ -8,12 +8,14 @@ enum menu{
 	cards_store,
 	particules,
 	hats,
-	debug
+	debug,
+	vehicles
 }
 enum debugmode{
 	None,
 	Particules,
-	Hat
+	Hat,
+	Vehicles
 }
 def clearItem(){
 	itemtags banitem = barrier,map,red_stained_glass,green_stained_glass_pane, pumpkin_seeds, gray_stained_glass_pane, chest, hopper
@@ -21,6 +23,9 @@ def clearItem(){
 		itemtags banitem = $i.item
 	}
 	forgenerate($i,hats){
+		itemtags banitem = $i.item
+	}
+	forgenerate($i,vehicles){
 		itemtags banitem = $i.item
 	}
 
@@ -80,6 +85,32 @@ def hatRecieved(int parti):bool{
 		untag(target)
 	}
 }
+
+def vehicleRecieved(int parti):bool{
+	with(@e[tag=target]){
+		if (parti < inv.nbVehicles){
+			bool unlocked = false
+			
+			switch(parti,1024){
+				int $m = fromconst(inv.nbVehicles)
+				forgenerate($i,0,$eval($m-1)){
+					int $hat = fromenum(vehicles,$i)
+					$i -> if (!inv.hasVehicle_$i){unlocked=true}
+					$i -> inv.hasVehicle_$i = true
+				}
+			}
+			if (unlocked){
+				title(@s,title," ")
+				title(@s,subtitle,"Your recieved a vehicle!")
+				at(@s){
+				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+				}
+			}
+			return(unlocked)
+		}
+		untag(target)
+	}
+}
 def resetTime(){
 	Time = 0	
 }
@@ -100,14 +131,18 @@ def ticking main(){
 		index += 1
 		positioned(~ -1 ~){
 		if (s == 0){
-			int rng = Random.Range(0,2)
+			int rng = Random.Range(0,3)
 			if (rng == 0){
 				tag(target)
 				give = particuleRecieved(Random.Range(1,inv.nbParticules))
 			}
-			else{
+			else if (rng == 1){
 				tag(target)
 				give = hatRecieved(Random.Range(1,inv.nbHats))
+			}
+			else{
+				tag(target)
+				give = vehicleRecieved(Random.Range(1,inv.nbVehicles))
 			}
 			if (!give){
 				Time--	
@@ -131,6 +166,11 @@ def ticking main(){
 			inv.SelectedParticule(null)
 			if (Delay <= 0){Menu = none}
 		}
+		input.whileHorse(){
+			inv.SelectedParticule(null)
+			if (Delay <= 0){Menu = none}
+		}
+
 		if (Delay > 0){Delay--}
 		input.onOpenEnderChest(){
 			Menu = main
@@ -157,6 +197,14 @@ def ticking main(){
 						print((@a[distance=..2,tag=!debug],gold),(" was given a hat by ",yellow),(@a[tag=shooter,limit=1],gold))
 					}
 				}
+				if (DMode == Vehicles){
+					int hat = inv.SelectedVehicleIndex
+					tag(@a[distance=..2,tag=!debug],target)
+					vehicleRecieved(hat)
+					if (@a[distance=..2,tag=!debug]){
+						print((@a[distance=..2,tag=!debug],gold),(" was given a vehicle by ",yellow),(@a[tag=shooter,limit=1],gold))
+					}
+				}
 			}
 		}
 		input.onJump(){
@@ -175,6 +223,7 @@ def ticking main(){
 			particules -> particules.manage()
 			hats -> hats.manage()
 			debug -> debug.manage()
+			vehicles -> vehicles.manage()
 		}
 	}
 }

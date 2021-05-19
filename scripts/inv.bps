@@ -3,6 +3,7 @@ package inv
 int $maxCard = 1023
 int $maxParticle = 1023
 int $maxHat = 1023
+int $maxVehicle = 1023
 forgenerate($i,0,$maxCard){
 	INT hasCard_$i
 }
@@ -12,11 +13,16 @@ forgenerate($i,0,$maxParticle){
 forgenerate($i,0,$maxHat){
 	INT hasHat_$i
 }
+forgenerate($i,0,$maxVehicle){
+	INT hasVehicle_$i
+}
 
 FUNCTION<(parti),(void)> SelectedParticule
 INT SelectedParticuleIndex
 FUNCTION<(hat),(void)> SelectedHat
 INT SelectedHatIndex
+FUNCTION<(hat),(void)> SelectedVehicle
+INT SelectedVehicleIndex
 
 const int maxPerSlot = 5
 
@@ -32,11 +38,17 @@ enum("hats","hats.csv","CSV")
 const int nbHats = $hats.length
 const int nbpagehats = $eval(($hats.length/21)-1)eval$
 
+enum("vehicles","vehicles.csv","CSV")
+const int nbVehicles = $vehicles.length
+const int nbpagevehicles = $eval(($vehicles.length/21)-1)eval$
+
 require $eval($hats.length%21) == 0 "Number of hats must be a multiple of 21"
 require $eval($card.length%21) == 0 "Number of cards must be a multiple of 21"
 require $eval($particules.length%21) == 0 "Number of particles must be a multiple of 21"
+require $eval($vehicles.length%21) == 0 "Number of particles must be a multiple of 21"
 require $card.length <= $maxCard "Number of card must be lower then $maxCard"
 require $hats.length <= $maxHat "Number of hat must be lower then $maxHat"
+require $particules.length <= $maxParticle "Number of particules must be lower then $maxParticle"
 require $particules.length <= $maxParticle "Number of particules must be lower then $maxParticle"
 
 def giveAllCard(){
@@ -57,6 +69,12 @@ def giveAllHat(){
 		hasHat_$i = true
 	}
 }
+def giveAllVehicle(){
+	int $m = fromconst(nbVehicles)
+	forgenerate($i,0,$m){
+		hasVehicle_$i = true
+	}
+}
 def takeAllCard(){
 	int $m = fromconst(nbCard)
 	forgenerate($i,0,$m){
@@ -73,5 +91,11 @@ def takeAllHat(){
 	int $m = fromconst(nbHats)
 	forgenerate($i,0,$m){
 		hasHat_$i = false
+	}
+}
+def takeAllVehicle(){
+	int $m = fromconst(nbVehicles)
+	forgenerate($i,0,$m){
+		hasVehicle_$i = false
 	}
 }
