@@ -1,32 +1,32 @@
 package card_lb
 
 def reload(){
-	forgenerate($i,0,26){
-		inventory.setSlot(enderchest.$i, minecraft:air,1)
-	}
-	inventory.setSlot(enderchest.12, minecraft:chest{display:{Name:'[{"text":"Retrieve Card","italic":false}]',Lore:['[{"text":"Click Here to retrieve","italic":false,"color":"yellow"}]','[{"text":"cards you stored.","italic":false,"color":"yellow"}]']}},1)
-	inventory.setSlot(enderchest.14, minecraft:hopper{display:{Name:'[{"text":"Store Card","italic":false}]',Lore:['[{"text":"Click Here to store a card","italic":false,"color":"yellow"}]','[{"text":"so you can get it back later.","italic":false,"color":"yellow"}]']}},1)
-	inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
-	main.clearItem()
+    forgenerate($i,0,26){
+        inventory.setSlot(enderchest.$i, minecraft:air,1)
+    }
+    inventory.setSlot(enderchest.12, minecraft:chest{display:{Name:'[{"text":"Retrieve Card","italic":false}]',Lore:['[{"text":"Click Here to retrieve","italic":false,"color":"yellow"}]','[{"text":"cards you stored.","italic":false,"color":"yellow"}]']}},1)
+    inventory.setSlot(enderchest.14, minecraft:hopper{display:{Name:'[{"text":"Store Card","italic":false}]',Lore:['[{"text":"Click Here to store a card","italic":false,"color":"yellow"}]','[{"text":"so you can get it back later.","italic":false,"color":"yellow"}]']}},1)
+    inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
+    main.clearItem()
 }
 def start(){
-	reload()
-	main.Menu = card_menu
+    reload()
+    main.Menu = card_menu
 }
 def manage(){
-	if (!@s[nbt={EnderItems:[{Slot:12b,id:"minecraft:chest"}]}]){
-		clear(@s,chest)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		page.start()
-	}
-	else if (!@s[nbt={EnderItems:[{Slot:14b,id:"minecraft:hopper"}]}]){
-		clear(@s,hopper)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		card_store.start()
-	}
-	elseif (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
-		clear(@s,barrier)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 0
-		menu.start()
-	}
+        if (!@s[nbt={EnderItems:[{Slot:12b,id:"minecraft:chest"}]}]){
+        clear(@s,chest)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        page.start()
+    }
+        else if (!@s[nbt={EnderItems:[{Slot:14b,id:"minecraft:hopper"}]}]){
+        clear(@s,hopper)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        card_store.start()
+    }
+        elseif (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
+        clear(@s,barrier)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 0
+        menu.start()
+    }
 }
