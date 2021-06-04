@@ -1,229 +1,229 @@
 package main
 
 enum menu{
-	none,
-	main,
-	card_menu,
-	cards_get,
-	cards_store,
-	particules,
-	hats,
-	debug,
-	vehicles
+    none,
+    main,
+    card_menu,
+    cards_get,
+    cards_store,
+    particules,
+    hats,
+    debug,
+    vehicles
 }
 enum debugmode{
-	None,
-	Particules,
-	Hat,
-	Vehicles
+    None,
+    Particules,
+    Hat,
+    Vehicles
 }
 def clearItem(){
-	itemtags banitem = barrier,map,red_stained_glass,green_stained_glass_pane, pumpkin_seeds, gray_stained_glass_pane, chest, hopper
-	forgenerate($i,particules){
-		itemtags banitem = $i.item
-	}
-	forgenerate($i,hats){
-		itemtags banitem = $i.item
-	}
-	forgenerate($i,vehicles){
-		itemtags banitem = $i.item
-	}
-
-	/clear @s #mgminv:banitem
+    itemtags banitem = barrier,map,red_stained_glass,green_stained_glass_pane, pumpkin_seeds, gray_stained_glass_pane, chest, hopper
+    forgenerate($i,particules){
+        itemtags banitem = $i.item
+    }
+    forgenerate($i,hats){
+        itemtags banitem = $i.item
+    }
+    forgenerate($i,vehicles){
+        itemtags banitem = $i.item
+    }
+    
+    /clear @s #mgminv:banitem
 }
 MENU Menu
 DEBUGMODE DMode
 INT Time
 
 def particuleRecieved(int parti):bool{
-	with(@e[tag=target]){
-		if (parti < inv.nbParticules){
-			bool unlocked = false
-			switch(parti,1024){
-				int $m = fromconst(inv.nbParticules)
-				forgenerate($i,0,$eval($m-1)){
-					int $part = fromenum(particules,$i)
-					$i -> if (!inv.hasParticule_$i){unlocked=true}
-					$i -> inv.hasParticule_$i = true
-				}
-			}
-			if (unlocked){
-				title(@s,title," ")
-				title(@s,subtitle,"Your recieved a particles trail!")
-				at(@s){
-					/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-				}
-			}
-			return(unlocked)
-		}
-		untag(target)
-	}
+    with(@e[tag=target]){
+        if (parti < inv.nbParticules){
+            bool unlocked = false
+            switch(parti,1024){
+                int $m = fromconst(inv.nbParticules)
+                forgenerate($i,0,$eval($m-1)){
+                    int $part = fromenum(particules,$i)
+                    $i -> if (!inv.hasParticule_$i){unlocked=true}
+                    $i -> inv.hasParticule_$i = true
+                }
+            }
+            if (unlocked){
+                title(@s,title," ")
+                title(@s,subtitle,"You received a particles trail!")
+                at(@s){
+                    /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+                }
+            }
+            return(unlocked)
+        }
+        untag(target)
+    }
 }
 
 def hatRecieved(int parti):bool{
-	with(@e[tag=target]){
-		if (parti < inv.nbHats){
-			bool unlocked = false
-			
-			switch(parti,1024){
-				int $m = fromconst(inv.nbHats)
-				forgenerate($i,0,$eval($m-1)){
-					int $hat = fromenum(hats,$i)
-					$i -> if (!inv.hasHat_$i){unlocked=true}
-					$i -> inv.hasHat_$i = true
-				}
-			}
-			if (unlocked){
-				title(@s,title," ")
-				title(@s,subtitle,"Your recieved a hat!")
-				at(@s){
-				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-				}
-			}
-			return(unlocked)
-		}
-		untag(target)
-	}
+    with(@e[tag=target]){
+        if (parti < inv.nbHats){
+            bool unlocked = false
+            
+            switch(parti,1024){
+                int $m = fromconst(inv.nbHats)
+                forgenerate($i,0,$eval($m-1)){
+                    int $hat = fromenum(hats,$i)
+                    $i -> if (!inv.hasHat_$i){unlocked=true}
+                    $i -> inv.hasHat_$i = true
+                }
+            }
+            if (unlocked){
+                title(@s,title," ")
+                title(@s,subtitle,"You received a hat!")
+                at(@s){
+                    /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+                }
+            }
+            return(unlocked)
+        }
+        untag(target)
+    }
 }
 
 def vehicleRecieved(int parti):bool{
-	with(@e[tag=target]){
-		if (parti < inv.nbVehicles){
-			bool unlocked = false
-			
-			switch(parti,1024){
-				int $m = fromconst(inv.nbVehicles)
-				forgenerate($i,0,$eval($m-1)){
-					int $hat = fromenum(vehicles,$i)
-					$i -> if (!inv.hasVehicle_$i){unlocked=true}
-					$i -> inv.hasVehicle_$i = true
-				}
-			}
-			if (unlocked){
-				title(@s,title," ")
-				title(@s,subtitle,"Your recieved a vehicle!")
-				at(@s){
-				/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-				}
-			}
-			return(unlocked)
-		}
-		untag(target)
-	}
+    with(@e[tag=target]){
+        if (parti < inv.nbVehicles){
+            bool unlocked = false
+            
+            switch(parti,1024){
+                int $m = fromconst(inv.nbVehicles)
+                forgenerate($i,0,$eval($m-1)){
+                    int $hat = fromenum(vehicles,$i)
+                    $i -> if (!inv.hasVehicle_$i){unlocked=true}
+                    $i -> inv.hasVehicle_$i = true
+                }
+            }
+            if (unlocked){
+                title(@s,title," ")
+                title(@s,subtitle,"You received a vehicle!")
+                at(@s){
+                    /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+                }
+            }
+            return(unlocked)
+        }
+        untag(target)
+    }
 }
 def resetTime(){
-	Time = 0	
+    Time = 0
 }
 INT Delay
 def forceUnlock(){
-	Time = $eval(10*60*20-1)
+    Time = $eval(20*60*20-1)
 }
 def ticking main(){
-	with(@a,true){
-		Menu := none
-		inv.hasParticule_0 = true
-		inv.hasHat_0 = true
-		Time++
-		int s = Time%$eval(10*60*20)
-		int t = Time/$eval(10*60*20)
-		int index = t/2
-		bool give
-		index += 1
-		positioned(~ -1 ~){
-		if (s == 0){
-			int rng = Random.Range(0,3)
-			if (rng == 0){
-				tag(target)
-				give = particuleRecieved(Random.Range(1,inv.nbParticules))
-			}
-			else if (rng == 1){
-				tag(target)
-				give = hatRecieved(Random.Range(1,inv.nbHats))
-			}
-			else{
-				tag(target)
-				give = vehicleRecieved(Random.Range(1,inv.nbVehicles))
-			}
-			if (!give){
-				Time--	
-			}
-		}
-	}
-		if (Menu == none){
-			inv.SelectedHat(null)
-		}
-		else{
-			main.clearItem()	
-		}
-		input.whileSneak(){
-			inv.SelectedParticule(null)
-			if (Delay <= 0){Menu = none}
-		}
-		input.whileWalk(){
-			inv.SelectedParticule(null)
-		}
-		input.whileSprint(){
-			inv.SelectedParticule(null)
-			if (Delay <= 0){Menu = none}
-		}
-		input.whileHorse(){
-			inv.SelectedParticule(null)
-			if (Delay <= 0){Menu = none}
-		}
-
-		if (Delay > 0){Delay--}
-		input.onOpenEnderChest(){
-			Menu = main
-			Delay = 20
-			menu.start()
-		}
-		input.onClick(){
-			float dis = 100
-			
-			raycast.shoot(dis,1,@p[distance=..1,tag=!debug]){
-				if (DMode == Particules){
-					int parti = inv.SelectedParticuleIndex
-					tag(@a[distance=..2,tag=!debug],target)
-					particuleRecieved(parti)
-					if (@a[distance=..2,tag=!debug]){
-						print((@a[distance=..2,tag=!debug],gold),(" was given a particles trail by ",yellow),(@a[tag=shooter,limit=1],gold))
-					}
-				}
-				if (DMode == Hat){
-					int hat = inv.SelectedHatIndex
-					tag(@a[distance=..2,tag=!debug],target)
-					hatRecieved(hat)
-					if (@a[distance=..2,tag=!debug]){
-						print((@a[distance=..2,tag=!debug],gold),(" was given a hat by ",yellow),(@a[tag=shooter,limit=1],gold))
-					}
-				}
-				if (DMode == Vehicles){
-					int hat = inv.SelectedVehicleIndex
-					tag(@a[distance=..2,tag=!debug],target)
-					vehicleRecieved(hat)
-					if (@a[distance=..2,tag=!debug]){
-						print((@a[distance=..2,tag=!debug],gold),(" was given a vehicle by ",yellow),(@a[tag=shooter,limit=1],gold))
-					}
-				}
-			}
-		}
-		input.onJump(){
-			Menu = none
-		}
-		input.onDrop(){
-			if (Menu > none){
-				kill(@e[type=item,distance=..2,nbt=!{Item:{id:"minecraft:filled_map"}}])
-			}
-		}
-		switch(Menu){
-			main -> menu.manage()
-			card_menu -> card_lb.manage()
-			cards_get -> page.manage()
-			cards_store -> card_store.manage()
-			particules -> particules.manage()
-			hats -> hats.manage()
-			debug -> debug.manage()
-			vehicles -> vehicles.manage()
-		}
-	}
+    with(@a,true){
+        Menu := none
+        inv.hasParticule_0 = true
+        inv.hasHat_0 = true
+        Time++
+        int s = Time%$eval(20*60*20)
+        int t = Time/$eval(20*60*20)
+        int index = t/2
+        bool give
+        index += 1
+        positioned(~ -1 ~){
+            if (s == 0){
+                int rng = Random.Range(0,3)
+                if (rng == 0){
+                    tag(target)
+                    give = particuleRecieved(Random.Range(1,inv.nbParticules))
+                }
+                else if (rng == 1){
+                    tag(target)
+                    give = hatRecieved(Random.Range(1,inv.nbHats))
+                }
+                else{
+                    tag(target)
+                    give = vehicleRecieved(Random.Range(1,inv.nbVehicles))
+                }
+                if (!give){
+                    Time--
+                }
+            }
+        }
+        if (Menu == none){
+            inv.SelectedHat(null)
+        }
+        else{
+            main.clearItem()
+        }
+        input.whileSneak(){
+            inv.SelectedParticule(null)
+            if (Delay <= 0){Menu = none}
+        }
+        input.whileWalk(){
+            inv.SelectedParticule(null)
+        }
+        input.whileSprint(){
+            inv.SelectedParticule(null)
+            if (Delay <= 0){Menu = none}
+        }
+        input.whileHorse(){
+            inv.SelectedParticule(null)
+            if (Delay <= 0){Menu = none}
+        }
+        
+        if (Delay > 0){Delay--}
+        input.onOpenEnderChest(){
+            Menu = main
+            Delay = 20
+            menu.start()
+        }
+        input.onClick(){
+            float dis = 100
+            
+            raycast.shoot(dis,1,@p[distance=..1,tag=!debug]){
+                if (DMode == Particules){
+                    int parti = inv.SelectedParticuleIndex
+                    tag(@a[distance=..2,tag=!debug],target)
+                    particuleRecieved(parti)
+                    if (@a[distance=..2,tag=!debug]){
+                        print((@a[distance=..2,tag=!debug],gold),(" was given a particles trail by ",yellow),(@a[tag=shooter,limit=1],gold))
+                    }
+                }
+                if (DMode == Hat){
+                    int hat = inv.SelectedHatIndex
+                    tag(@a[distance=..2,tag=!debug],target)
+                    hatRecieved(hat)
+                    if (@a[distance=..2,tag=!debug]){
+                        print((@a[distance=..2,tag=!debug],gold),(" was given a hat by ",yellow),(@a[tag=shooter,limit=1],gold))
+                    }
+                }
+                if (DMode == Vehicles){
+                    int hat = inv.SelectedVehicleIndex
+                    tag(@a[distance=..2,tag=!debug],target)
+                    vehicleRecieved(hat)
+                    if (@a[distance=..2,tag=!debug]){
+                        print((@a[distance=..2,tag=!debug],gold),(" was given a vehicle by ",yellow),(@a[tag=shooter,limit=1],gold))
+                    }
+                }
+            }
+        }
+        input.onJump(){
+            Menu = none
+        }
+        input.onDrop(){
+            if (Menu > none){
+                kill(@e[type=item,distance=..2,nbt=!{Item:{id:"minecraft:filled_map"}}])
+            }
+        }
+        switch(Menu){
+            main -> menu.manage()
+            card_menu -> card_lb.manage()
+            cards_get -> page.manage()
+            cards_store -> card_store.manage()
+            particules -> particules.manage()
+            hats -> hats.manage()
+            debug -> debug.manage()
+            vehicles -> vehicles.manage()
+        }
+    }
 }

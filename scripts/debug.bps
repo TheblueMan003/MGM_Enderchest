@@ -1,110 +1,110 @@
 package debug
 
 def reload(){
-	forgenerate($i,0,26){
-		inventory.setSlot(enderchest.$i, minecraft:air,1)
-	}
-	inventory.setSlot(enderchest.0, minecraft:pumpkin_seeds{display:{Name:'[{"text":"Give @s All Particles ","italic":false}]'}},1)
-	inventory.setSlot(enderchest.1, minecraft:map{display:{Name:'[{"text":"Give @s All Cards","italic":false}]'}},1)
-	inventory.setSlot(enderchest.2, minecraft:creeper_head{display:{Name:'[{"text":"Give @s All Hats","italic":false}]'}},1)
-	inventory.setSlot(enderchest.3, minecraft:saddle{display:{Name:'[{"text":"Give @s All Vehicles","italic":false}]'}},1)
-	inventory.setSlot(enderchest.4, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Particles to Player","italic":false}]'}},1)
-	inventory.setSlot(enderchest.5, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Hat to Player","italic":false}]'}},1)
-	inventory.setSlot(enderchest.6, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Vehicle to Player","italic":false}]'}},1)
-	inventory.setSlot(enderchest.7, minecraft:nether_star{display:{Name:'[{"text":"Give Particle to @a","italic":false}]'}},1)
-	inventory.setSlot(enderchest.8, minecraft:nether_star{display:{Name:'[{"text":"Give Hat to @a","italic":false}]'}},1)
-	inventory.setSlot(enderchest.9, minecraft:nether_star{display:{Name:'[{"text":"Give Vehicle to @a","italic":false}]'}},1)
-	inventory.setSlot(enderchest.10, minecraft:nether_star{display:{Name:'[{"text":"Debug Particle","italic":false}]'}},1)
-	inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
+    forgenerate($i,0,26){
+        inventory.setSlot(enderchest.$i, minecraft:air,1)
+    }
+    inventory.setSlot(enderchest.0, minecraft:pumpkin_seeds{display:{Name:'[{"text":"Give @s All Particles ","italic":false}]'}},1)
+    inventory.setSlot(enderchest.1, minecraft:map{display:{Name:'[{"text":"Give @s All Cards","italic":false}]'}},1)
+    inventory.setSlot(enderchest.2, minecraft:creeper_head{display:{Name:'[{"text":"Give @s All Hats","italic":false}]'}},1)
+    inventory.setSlot(enderchest.3, minecraft:saddle{display:{Name:'[{"text":"Give @s All Vehicles","italic":false}]'}},1)
+    inventory.setSlot(enderchest.4, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Particles to Player","italic":false}]'}},1)
+    inventory.setSlot(enderchest.5, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Hat to Player","italic":false}]'}},1)
+    inventory.setSlot(enderchest.6, minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Give Vehicle to Player","italic":false}]'}},1)
+    inventory.setSlot(enderchest.7, minecraft:nether_star{display:{Name:'[{"text":"Give Particle to @a","italic":false}]'}},1)
+    inventory.setSlot(enderchest.8, minecraft:nether_star{display:{Name:'[{"text":"Give Hat to @a","italic":false}]'}},1)
+    inventory.setSlot(enderchest.9, minecraft:nether_star{display:{Name:'[{"text":"Give Vehicle to @a","italic":false}]'}},1)
+    inventory.setSlot(enderchest.10, minecraft:nether_star{display:{Name:'[{"text":"Debug Particle","italic":false}]'}},1)
+    inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
 }
 def start(){
-	reload()
-	main.Menu = debug
+    reload()
+    main.Menu = debug
 }
 def manage(){
-		if (!@s[nbt={EnderItems:[{Slot:0b,id:"minecraft:pumpkin_seeds"}]}]){
-		clear(@s,pumpkin_seeds)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		inv.giveAllParticule()
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:1b,id:"minecraft:map"}]}]){
-		clear(@s,map)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		inv.giveAllCard()
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:2b,id:"minecraft:creeper_head"}]}]){
-		clear(@s,creeper_head)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		inv.giveAllHat()
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:3b,id:"minecraft:saddle"}]}]){
-		clear(@s,saddle)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		inv.giveAllVehicle()
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:4b,id:"minecraft:carrot_on_a_stick"}]}]){
-		clear(@s,carrot_on_a_stick)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		/give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Particules to Player","italic":false}]'}}
-		main.DMode = Particules
-		reload()
-	}
-	else if (!@s[nbt={EnderItems:[{Slot:5b,id:"minecraft:carrot_on_a_stick"}]}]){
-		clear(@s,carrot_on_a_stick)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		/give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Hats to Player","italic":false}]'}}
-		main.DMode = Hat
-		reload()
-	}
-	else if (!@s[nbt={EnderItems:[{Slot:6b,id:"minecraft:carrot_on_a_stick"}]}]){
-		clear(@s,carrot_on_a_stick)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		/give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Hats to Player","italic":false}]'}}
-		main.DMode = Vehicles
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:7b,id:"minecraft:nether_star"}]}]){
-		clear(@s,nether_star)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		int parti = inv.SelectedParticuleIndex
-		tag(@a,target)
-		main.particuleRecieved(parti)
-		print(("Everyone",gold),(" recieved a particule trail by ",yellow),(@s,gold))
-		
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:8b,id:"minecraft:nether_star"}]}]){
-		clear(@s,nether_star)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		int parti = inv.SelectedHatIndex
-		tag(@a,target)
-		main.hatRecieved(parti)
-		print(("Everyone",gold),(" recieved a hat trail by ",yellow),(@s,gold))
-		reload()
-	}
-	else if (!@s[nbt={EnderItems:[{Slot:9b,id:"minecraft:nether_star"}]}]){
-		clear(@s,nether_star)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		int parti = inv.SelectedVehicleIndex
-		tag(@a,target)
-		main.vehicleRecieved(parti)
-		print(("Everyone",gold),(" recieved a vehicle trail by ",yellow),(@s,gold))
-		reload()
-	}
-	else if (!@s[nbt={EnderItems:[{Slot:10b,id:"minecraft:nether_star"}]}]){
-		clear(@s,nether_star)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		inv.SelectedParticule = particules_func.part_s
-		reload()
-	}
-		else if (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
-		clear(@s,barrier)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-		menu.start()
-	}
+    if (!@s[nbt={EnderItems:[{Slot:0b,id:"minecraft:pumpkin_seeds"}]}]){
+        clear(@s,pumpkin_seeds)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        inv.giveAllParticule()
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:1b,id:"minecraft:map"}]}]){
+        clear(@s,map)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        inv.giveAllCard()
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:2b,id:"minecraft:creeper_head"}]}]){
+        clear(@s,creeper_head)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        inv.giveAllHat()
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:3b,id:"minecraft:saddle"}]}]){
+        clear(@s,saddle)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        inv.giveAllVehicle()
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:4b,id:"minecraft:carrot_on_a_stick"}]}]){
+        clear(@s,carrot_on_a_stick)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        /give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Particules to Player","italic":false}]'}}
+        main.DMode = Particules
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:5b,id:"minecraft:carrot_on_a_stick"}]}]){
+        clear(@s,carrot_on_a_stick)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        /give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Hats to Player","italic":false}]'}}
+        main.DMode = Hat
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:6b,id:"minecraft:carrot_on_a_stick"}]}]){
+        clear(@s,carrot_on_a_stick)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        /give @s carrot_on_a_stick{display:{Name:'[{"text":"[Admin Tools] Give Hats to Player","italic":false}]'}}
+        main.DMode = Vehicles
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:7b,id:"minecraft:nether_star"}]}]){
+        clear(@s,nether_star)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        int parti = inv.SelectedParticuleIndex
+        tag(@a,target)
+        main.particuleRecieved(parti)
+        print(("Everyone",gold),(" recieved a particule trail by ",yellow),(@s,gold))
+        
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:8b,id:"minecraft:nether_star"}]}]){
+        clear(@s,nether_star)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        int parti = inv.SelectedHatIndex
+        tag(@a,target)
+        main.hatRecieved(parti)
+        print(("Everyone",gold),(" recieved a hat by ",yellow),(@s,gold))
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:9b,id:"minecraft:nether_star"}]}]){
+        clear(@s,nether_star)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        int parti = inv.SelectedVehicleIndex
+        tag(@a,target)
+        main.vehicleRecieved(parti)
+        print(("Everyone",gold),(" recieved a vehicle by ",yellow),(@s,gold))
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:10b,id:"minecraft:nether_star"}]}]){
+        clear(@s,nether_star)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        inv.SelectedParticule = particules_func.part_s
+        reload()
+    }
+    else if (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
+        clear(@s,barrier)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+        menu.start()
+    }
 }
 

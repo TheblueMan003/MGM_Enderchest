@@ -1,137 +1,137 @@
 package particules_func
 
 def part_s(parti _){
-	INT Tick
-	Tick++
-	switch(Tick%7){
-		forgenerate($i,6,12){
-			$eval($i-6)->part_$i()
-		}
-	}
+    INT Tick
+    Tick++
+    switch(Tick%7){
+        forgenerate($i,6,12){
+            $eval($i-6)->part_$i()
+        }
+    }
 }
 def part_0(parti _){
-	
+    
 }
 def part_1(parti _){
-	/particle minecraft:note ~ ~2 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:note ~ ~2 ~ 0.5 0.5 0.5 1 1
 }
 def part_2(parti _){
-	/particle minecraft:effect ~ ~2 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:effect ~ ~2 ~ 0.5 0.5 0.5 1 1
 }
 def part_3(parti _){
-	/particle minecraft:dragon_breath ~ ~2 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:dragon_breath ~ ~2 ~ 0.5 0.5 0.5 .1 1
 }
 def part_4(parti _){
-	/particle minecraft:firework ~ ~2 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:firework ~ ~2 ~ 0.5 0.5 0.5 .1 1
 }
 def part_5(parti _){
-	/particle minecraft:dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 1 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_6(parti _){
-	/particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_7(parti _){
-	/particle minecraft:dust 1 0.5 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 1 0.5 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_8(parti _){
-	/particle minecraft:dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 1 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_9(parti _){
-	/particle minecraft:dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 0 1 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_10(parti _){
-	/particle minecraft:dust 0 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 0 1 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_11(parti _){
-	/particle minecraft:dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 0 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_12(parti _){
-	/particle minecraft:dust 1 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 1 0 1 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_13(parti _){
-	/particle minecraft:dust 0 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
+    /particle minecraft:dust 0 0 0 1 ~ ~1 ~ 0.5 0.5 0.5 .1 5
 }
 def part_14(parti _){
-	/particle minecraft:flame ~ ~1 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:flame ~ ~1 ~ 0.5 0.5 0.5 .1 1
 }
 def part_15(parti _){
-	/particle minecraft:soul ~ ~2 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:soul ~ ~2 ~ 0.5 0.5 0.5 .1 1
 }
 def part_16(parti _){
-	/particle minecraft:enchant ~ ~1 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:enchant ~ ~1 ~ 0.5 0.5 0.5 .1 1
 }
 def part_17(parti _){
-	/particle minecraft:angry_villager ~ ~2 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:angry_villager ~ ~2 ~ 0.5 0.5 0.5 .1 1
 }
 def part_18(parti _){
-	/particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.5 0.5 .1 1
 }
 def part_19(parti _){
-	/particle minecraft:heart ~ ~1 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:heart ~ ~1 ~ 0.5 0.5 0.5 .1 1
 }
 def part_20(parti _){
-	/particle minecraft:campfire_cosy_smoke ~ ~ ~
+    /particle minecraft:campfire_cosy_smoke ~ ~ ~
 }
 def part_21(parti _){
-	/particle minecraft:composter ~ ~1 ~ 0.5 0.5 0.5 .1 1
+    /particle minecraft:composter ~ ~1 ~ 0.5 0.5 0.5 .1 1
 }
 def part_22(parti _){
-	/particle minecraft:crimson_spore ~ ~ ~ 0.5 0.5 0.5 1 3
+    /particle minecraft:crimson_spore ~ ~ ~ 0.5 0.5 0.5 1 3
 }
 def part_23(parti _){
-	/particle minecraft:warped_spore ~ ~ ~ 0.5 0.5 0.5 1 3
+    /particle minecraft:warped_spore ~ ~ ~ 0.5 0.5 0.5 1 3
 }
 def part_24(parti _){
-	/particle minecraft:falling_nectar ~ ~2 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:falling_nectar ~ ~2 ~ 0.5 0.5 0.5 1 1
 }
 def part_25(parti _){
-	/particle minecraft:splash ~ ~2 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:splash ~ ~2 ~ 0.5 0.5 0.5 1 1
 }
 def part_26(parti _){
-	/particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:lava ~ ~ ~ 0.5 0.5 0.5 1 1
 }
 def part_27(parti _){
-	/particle minecraft:crit ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:crit ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_28(parti _){
-	/particle minecraft:witch ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:witch ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_29(parti _){
-	/particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_30(parti _){
-	/particle minecraft:falling_obsidian_tear ~ ~2 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:falling_obsidian_tear ~ ~2 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_31(parti _){
-	/particle minecraft:sneeze ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:sneeze ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_32(parti _){
-	/particle minecraft:nautilus ~ ~2 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:nautilus ~ ~2 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_33(parti _){
-	/particle minecraft:happy_villager ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:happy_villager ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_34(parti _){
-	/particle minecraft:ash ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:ash ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }
 def part_35(parti _){
-	/particle minecraft:poof ~ ~1 ~ 0 0 0 0 1
+    /particle minecraft:poof ~ ~1 ~ 0 0 0 0 1
 }
 def part_36(parti _){
-	/particle minecraft:block oak_log ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:block oak_log ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_37(parti _){
-	/particle minecraft:block iron_block ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:block iron_block ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_38(parti _){
-	/particle minecraft:block gold_block ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:block gold_block ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_39(parti _){
-	/particle minecraft:block diamond_block ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:block diamond_block ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_40(parti _){
-	/particle minecraft:block netherite_block ~ ~1 ~ 0.5 0.5 0.5 1 1
+    /particle minecraft:block netherite_block ~ ~1 ~ 0.5 0.5 0.5 1 1
 }
 def part_41(parti _){
-	/particle minecraft:end_rod ~ ~1 ~ 0.5 0.5 0.5 0.1 1
+    /particle minecraft:end_rod ~ ~1 ~ 0.5 0.5 0.5 0.1 1
 }

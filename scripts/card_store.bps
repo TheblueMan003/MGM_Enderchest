@@ -2,10 +2,10 @@ package card_store
 
 def reload(){
 	forgenerate($i,0,26){
-		/replaceitem entity @s enderchest.$i minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}}
+		inventory.setSlot(enderchest.$i, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}}, 1)
 	}
-	/replaceitem entity @s enderchest.13 minecraft:air
-	/replaceitem entity @s enderchest.26 minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}}
+	inventory.setSlot(enderchest.13, minecraft:air, 1)
+	inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}}, 1)
 	main.clearItem()
 }
 def start(){

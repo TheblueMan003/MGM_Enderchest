@@ -5,121 +5,121 @@ int $pgnb = fromconst(inv.nbpage)
 int $max = fromconst(inv.maxPerSlot)
 
 def pageBase(){
-	inventory.setSlot(enderchest.8, minecraft:stone,1)
-	inventory.setSlot(enderchest.17, minecraft:stone,1)
-	inventory.setSlot(enderchest.26, minecraft:stone,1)
-	
-	inventory.setSlot(enderchest.7, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
-	inventory.setSlot(enderchest.16, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
-	inventory.setSlot(enderchest.25, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
-	inventory.setSlot(enderchest.8, minecraft:player_head{SkullOwner:"MHF_ArrowLeft",display:{Name:'[{"text":"Previous Page","italic":false}]'}},1)
-	inventory.setSlot(enderchest.17, minecraft:player_head{SkullOwner:"MHF_ArrowRight",display:{Name:'[{"text":"Next Page","italic":false}]'}},1)
-	inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
+    inventory.setSlot(enderchest.8, minecraft:stone,1)
+    inventory.setSlot(enderchest.17, minecraft:stone,1)
+    inventory.setSlot(enderchest.26, minecraft:stone,1)
+    
+    inventory.setSlot(enderchest.7, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
+    inventory.setSlot(enderchest.16, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
+    inventory.setSlot(enderchest.25, minecraft:green_stained_glass_pane{display:{Name:'[{"text":"","italic":false}]'}},1)
+    inventory.setSlot(enderchest.8, minecraft:player_head{SkullOwner:"MHF_ArrowLeft",display:{Name:'[{"text":"Previous Page","italic":false}]'}},1)
+    inventory.setSlot(enderchest.17, minecraft:player_head{SkullOwner:"MHF_ArrowRight",display:{Name:'[{"text":"Next Page","italic":false}]'}},1)
+    inventory.setSlot(enderchest.26, minecraft:barrier{display:{Name:'[{"text":"Back","italic":false}]'}},1)
 }
 
 forgenerate($i,0,$pgnb){
-	def page_$i(){
-		forgenerate($x,0,6){
-			forgenerate($y,0,2){
-				int $cardId = $eval((($i*21)+($y*7))+$x)eval$
-				int $name = fromenum(card, $cardId)
-				int $slot = $eval(($y*9)+$x)eval$
-				
-				if (inv.hasCard_$cardId){
-					forgenerate($c,1,$max){
-						if (inv.hasCard_$cardId == $c){
-							inventory.setSlot(enderchest.$slot, minecraft:red_stained_glass{display:{Name:'[{"text":$name.name,"italic":false}]',Lore:['[{"text":"Count: ","italic":false,"color":"gold"},{"text":"$c","color":"yellow"}]']}},1)
-						}
-					}
-					if (inv.hasCard_$cardId > $max){
-						inventory.setSlot(enderchest.$slot, minecraft:red_stained_glass{display:{Name:'[{"text":$name.name,"italic":false}]',Lore:['[{"text":"Count: ","italic":false,"color":"gold"},{"text":"$max+","color":"yellow"}]']}},1)
-					}
-				}
-				if (!inv.hasCard_$cardId){
-					inventory.setSlot(enderchest.$slot, minecraft:gray_stained_glass_pane{display:{Name:'[{"text":"Locked","color":"gray","italic":false}]'}},1)
-				}
-			}
-		}
-		pageBase()
-	}
+    def page_$i(){
+        forgenerate($x,0,6){
+            forgenerate($y,0,2){
+                int $cardId = $eval((($i*21)+($y*7))+$x)eval$
+                int $name = fromenum(card, $cardId)
+                int $slot = $eval(($y*9)+$x)eval$
+                
+                if (inv.hasCard_$cardId){
+                    forgenerate($c,1,$max){
+                        if (inv.hasCard_$cardId == $c){
+                            inventory.setSlot(enderchest.$slot, minecraft:red_stained_glass{display:{Name:'[{"text":$name.name,"italic":false}]',Lore:['[{"text":"Count: ","italic":false,"color":"gold"},{"text":"$c","color":"yellow"}]']}},1)
+                        }
+                    }
+                    if (inv.hasCard_$cardId > $max){
+                        inventory.setSlot(enderchest.$slot, minecraft:red_stained_glass{display:{Name:'[{"text":$name.name,"italic":false}]',Lore:['[{"text":"Count: ","italic":false,"color":"gold"},{"text":"$max+","color":"yellow"}]']}},1)
+                    }
+                }
+                if (!inv.hasCard_$cardId){
+                    inventory.setSlot(enderchest.$slot, minecraft:gray_stained_glass_pane{display:{Name:'[{"text":"Locked","color":"gray","italic":false}]'}},1)
+                }
+            }
+        }
+        pageBase()
+    }
 }
 def start(){
-	Current = 0
-	reload()
-	main.Menu = cards_get
+    Current = 0
+    reload()
+    main.Menu = cards_get
 }
 def reload(){
-	switch(Current){
-		forgenerate($i,0,$pgnb){
-			$i-> page_$i()
-		}
-	}
-	main.clearItem()
-	clear(@s,player_head)
+    switch(Current){
+        forgenerate($i,0,$pgnb){
+            $i-> page_$i()
+        }
+    }
+    main.clearItem()
+    clear(@s,player_head)
 }
 def left(){
-	if (Current > 0){
-		Current--
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-	}
-	else{
-		/playsound minecraft:block.note_block.bass block @s ~ ~ ~ 1 0	
-	}
-	reload()
+    if (Current > 0){
+        Current--
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+    }
+    else{
+        /playsound minecraft:block.note_block.bass block @s ~ ~ ~ 1 0   
+    }
+    reload()
 }
 def right(){
-	if (Current < inv.nbpage){
-		Current++
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
-	}
-	else{
-		/playsound minecraft:block.note_block.bass block @s ~ ~ ~ 1 0	
-	}
-	reload()
+    if (Current < inv.nbpage){
+        Current++
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 1
+    }
+    else{
+        /playsound minecraft:block.note_block.bass block @s ~ ~ ~ 1 0   
+    }
+    reload()
 }
 def manage(){
-	def cardGet(){
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 0.2 2
-		clear(@s,red_stained_glass)
-		reload()
-	}
-		if (!@s[nbt={EnderItems:[{Slot:8b,id:"minecraft:player_head"}]}]){
-		left()
-	}
-		if (!@s[nbt={EnderItems:[{Slot:17b,id:"minecraft:player_head"}]}]){
-		right()
-	}
-		if (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
-		clear(@s,barrier)
-		/playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 0
-		card_lb.start()
-	}
-	else{
-		int c
-		cmdstore(c,clear @s gray_stained_glass_pane)
-		if (c > 0){reload()}
-		cmdstore(c,clear @s green_stained_glass_pane)
-		if (c > 0){reload()}
-		
-		switch(Current){
-			forgenerate($i,0,$pgnb){
-				case($i){
-					forgenerate($x,0,6){
-						forgenerate($y,0,2){
-							int $cardId = $eval((($i*21)+($y*7))+$x)eval$
-							int $slot = $eval(($y*9)+$x)eval$
-							int $name = fromenum(card, $cardId)
+    def cardGet(){
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 0.2 2
+        clear(@s,red_stained_glass)
+        reload()
+    }
+        if (!@s[nbt={EnderItems:[{Slot:8b,id:"minecraft:player_head"}]}]){
+        left()
+    }
+        if (!@s[nbt={EnderItems:[{Slot:17b,id:"minecraft:player_head"}]}]){
+        right()
+    }
+        if (!@s[nbt={EnderItems:[{Slot:26b,id:"minecraft:barrier"}]}]){
+        clear(@s,barrier)
+        /playsound minecraft:block.note_block.bell block @s ~ ~ ~ 1 0
+        card_lb.start()
+    }
+    else{
+        int c
+        cmdstore(c,clear @s gray_stained_glass_pane)
+        if (c > 0){reload()}
+        cmdstore(c,clear @s green_stained_glass_pane)
+        if (c > 0){reload()}
+        
+        switch(Current){
+            forgenerate($i,0,$pgnb){
+                case($i){
+                    forgenerate($x,0,6){
+                        forgenerate($y,0,2){
+                            int $cardId = $eval((($i*21)+($y*7))+$x)eval$
+                            int $slot = $eval(($y*9)+$x)eval$
+                            int $name = fromenum(card, $cardId)
 
-							if (!@s[nbt={EnderItems:[{Slot:$slotb,id:"minecraft:red_stained_glass"}]}]
-							&& inv.hasCard_$cardId){
-								inv.hasCard_$cardId --
-								/give @s filled_map{map:$name.map,display:{Name:'[{"text":$name.name,"color":"green","italic":false}]'}}
-								cardGet()
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                            if (!@s[nbt={EnderItems:[{Slot:$slotb,id:"minecraft:red_stained_glass"}]}]
+                            && inv.hasCard_$cardId){
+                                inv.hasCard_$cardId --
+                                /give @s filled_map{map:$name.map,display:{Name:'[{"text":$name.name,"color":"green","italic":false}]'}}
+                                cardGet()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

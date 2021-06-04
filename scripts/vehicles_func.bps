@@ -6,83 +6,90 @@ int target_id
 OFFSET=>VOID tpFunc
 
 def tp00(offset _){
-	/tp @s ~ ~ ~ ~ ~
+    /tp @s ~ ~ ~ ~ ~
 }
 def tp10(offset _){
-	/tp @s ~ ~1 ~ ~ ~
+    /tp @s ~ ~1 ~ ~ ~
 }
 def tp05(offset _){
-	/tp @s ~ ~0.5 ~ ~ ~
+    /tp @s ~ ~0.5 ~ ~ ~
 }
 def tp07(offset _){
-	/tp @s ~ ~0.7 ~ ~ ~
+    /tp @s ~ ~0.7 ~ ~ ~
 }
 
 def killMount(){
-	with(@e[tag=vehicle_model],true,target_id == id){
-		effect(give,@s,invisibility,999999,0,true)
-		kill(@s)
-	}
-	if (tag(vehicle_base)){
-		kill(@s)
-	}
-	kill(@e[type=item,distance=..2])
+    with(@e[tag=vehicle_model],true,target_id == id){
+        effect(give,@s,invisibility,999999,0,true)
+        kill(@s)
+    }
+    if (tag(vehicle_base)){
+        kill(@s)
+    }
+    kill(@e[type=item,distance=..2])
+    kill(@e[type=experience_orb,distance=..2])
 }
 def prepNewVehicle(){
-	target_id = id
-	killMount()
-	global_id++
-	id = global_id
+    target_id = id
+    killMount()
+    global_id++
+    id = global_id
 }
 def setNewVehicle(){
-	with(@e[tag=trg_v]){
-		untag(trg_v)
-		id = global_id
-		effect(give,@s,fire_resistance,999999,0,true)
-		if (tag(vehicle_base)){
-			effect(give,@s,invisibility,999999,0,true)
-		}
-	}
+    with(@e[tag=trg_v]){
+        untag(trg_v)
+        id = global_id
+        effect(give,@s,fire_resistance,999999,0,true)
+        if (tag(vehicle_base)){
+            effect(give,@s,invisibility,999999,0,true)
+        }
+    }
 }
 
 forgenerate($v,vehicles){
-	def spawn_$v(){
-		prepNewVehicle()
-		
-		/summon $v.mob ~ ~ ~ {Tags:["vehicle","vehicle_model","trg_v"],Silent:1,Invulnerable:1}
-		/summon $v.base ~ ~ ~ {Tags:["vehicle","vehicle_base","trg_v"],Silent:1,Invulnerable:1,Tame:1,SaddleItem:{id:"minecraft:saddle",Count:1b},NoAI:1}
-		with(@e[tag=trg_v,tag=vehicle_model]){
-			tpFunc = $v.tp
-			data.set($v.mob_data)
-		}
-		setNewVehicle()
-	}
+    def spawn_$v(){
+        prepNewVehicle()
+        
+        /summon $v.mob ~ ~ ~ {Tags:["vehicle","vehicle_model","trg_v"],Silent:1,Invulnerable:1}
+        /summon $v.base ~ ~ ~ {Tags:["vehicle","vehicle_base","trg_v"],Silent:1,Invulnerable:1,Tame:1,SaddleItem:{id:"minecraft:saddle",Count:1b},NoAI:1}
+        with(@e[tag=trg_v,tag=vehicle_model]){
+            tpFunc = $v.tp
+            data.set($v.mob_data)
+        }
+        setNewVehicle()
+    }
 }
 
 def ticking main(){
-	with(@e[tag=vehicle_model],true){
-		target_id=id
-		bool hasParent = false
-		
-		with(@e[tag=vehicle_base],false,target_id==id){
-			hasParent = true
-		}
-		if (!hasParent){
-			killMount()
-		}
-	}
-	with(@e[tag=vehicle_base],true){
-		target_id=id
-		int hasParent = 0
-		with(@e[tag=vehicle_model],false,target_id==id){
-			tpFunc(null)
-			hasParent += 1
-		}
-		with(@a[distance=..10],false,target_id==id){
-			hasParent += 1
-		}
-		if (hasParent!=2){
-			killMount()
-		}
-	}
+    with(@e[tag=vehicle_model],true){
+        target_id=id
+        bool hasParent = false
+        
+        with(@e[tag=vehicle_base],false,target_id==id){
+            hasParent = true
+        }
+        if (!hasParent){
+            killMount()
+        }
+    }
+    with(@e[tag=vehicle_base],true){
+        if (nbt({OnGround:0b,NoAI:1b})){
+            data.set({NoAI:0})
+        }
+        if (nbt({OnGround:1b})){
+            data.set({NoAI:1})
+        }
+        target_id=id
+        int hasParent = 0
+        with(@e[tag=vehicle_model],false,target_id==id){
+            tpFunc(null)
+            hasParent += 1
+        }
+        with(@a[distance=..10],false,target_id==id){
+            hasParent += 1
+        }
+        if (hasParent!=2){
+            killMount()
+        }
+    }
 }
