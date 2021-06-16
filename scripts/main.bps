@@ -118,6 +118,12 @@ INT Delay
 def forceUnlock(){
     Time = $eval(20*60*20-1)
 }
+def menuexit(){
+    Menu = none
+    forgenerate($i,0,26){
+        inventory.setenderchest($i, air)
+    }
+}
 def ticking main(){
     with(@a,true){
         Menu := none
@@ -157,18 +163,14 @@ def ticking main(){
         }
         input.whileSneak(){
             inv.SelectedParticule(null)
-            if (Delay <= 0){Menu = none}
+            if (Delay <= 0){menuexit()}
         }
         input.whileWalk(){
             inv.SelectedParticule(null)
         }
         input.whileSprint(){
             inv.SelectedParticule(null)
-            if (Delay <= 0){Menu = none}
-        }
-        input.whileHorse(){
-            inv.SelectedParticule(null)
-            if (Delay <= 0){Menu = none}
+            if (Delay <= 0){menuexit()}
         }
         
         if (Delay > 0){Delay--}
@@ -208,7 +210,7 @@ def ticking main(){
             }
         }
         input.onJump(){
-            Menu = none
+            menuexit()
         }
         input.onDrop(){
             if (Menu > none){

@@ -52,6 +52,9 @@ forgenerate($v,vehicles){
         
         /summon $v.mob ~ ~ ~ {Tags:["vehicle","vehicle_model","trg_v"],Silent:1,Invulnerable:1}
         /summon $v.base ~ ~ ~ {Tags:["vehicle","vehicle_base","trg_v"],Silent:1,Invulnerable:1,Tame:1,SaddleItem:{id:"minecraft:saddle",Count:1b},NoAI:1}
+        with(@e[tag=trg_v,tag=vehicle_base]){
+            /attribute @s minecraft:generic.movement_speed base set 0.11
+        }
         with(@e[tag=trg_v,tag=vehicle_model]){
             tpFunc = $v.tp
             data.set($v.mob_data)
@@ -73,14 +76,16 @@ def ticking main(){
         }
     }
     with(@e[tag=vehicle_base],true){
-        if (nbt({OnGround:0b,NoAI:1b})){
+            if (nbt({OnGround:0b,NoAI:1b})){
             data.set({NoAI:0})
         }
-        if (nbt({OnGround:1b})){
+            if (nbt({OnGround:1b})){
             data.set({NoAI:1})
         }
         target_id=id
         int hasParent = 0
+        
+        
         with(@e[tag=vehicle_model],false,target_id==id){
             tpFunc(null)
             hasParent += 1

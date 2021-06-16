@@ -5,16 +5,16 @@ int $maxParticle = 1023
 int $maxHat = 1023
 int $maxVehicle = 1023
 forgenerate($i,0,$maxCard){
-	INT hasCard_$i
+    INT hasCard_$i
 }
 forgenerate($i,0,$maxParticle){
-	INT hasParticule_$i
+    INT hasParticule_$i
 }
 forgenerate($i,0,$maxHat){
-	INT hasHat_$i
+    INT hasHat_$i
 }
 forgenerate($i,0,$maxVehicle){
-	INT hasVehicle_$i
+    INT hasVehicle_$i
 }
 
 FUNCTION<(parti),(void)> SelectedParticule
@@ -52,50 +52,50 @@ require $particules.length <= $maxParticle "Number of particules must be lower t
 require $particules.length <= $maxParticle "Number of particules must be lower then $maxParticle"
 
 def giveAllCard(){
-	int $m = fromconst(nbCard)
-	forgenerate($i,0,$m){
-		hasCard_$i ++
-	}
+    int $m = fromconst(nbCard)
+    forgenerate($i,0,$m){
+        hasCard_$i ++
+    }
 }
 def giveAllParticule(){
-	int $m = fromconst(nbParticules)
-	forgenerate($i,0,$m){
-		hasParticule_$i = true
-	}
+    int $m = fromconst(nbParticules)
+    forgenerate($i,0,$m){
+        hasParticule_$i = true
+    }
 }
 def giveAllHat(){
-	int $m = fromconst(nbHats)
-	forgenerate($i,0,$m){
-		hasHat_$i = true
-	}
+    int $m = fromconst(nbHats)
+    forgenerate($i,0,$m){
+        hasHat_$i = true
+    }
 }
 def giveAllVehicle(){
-	int $m = fromconst(nbVehicles)
-	forgenerate($i,0,$m){
-		hasVehicle_$i = true
-	}
+    int $m = fromconst(nbVehicles)
+    forgenerate($i,0,$m){
+        hasVehicle_$i = true
+    }
 }
 def takeAllCard(){
-	int $m = fromconst(nbCard)
-	forgenerate($i,0,$m){
-		hasCard_$i = 0
-	}
+    int $m = fromconst(nbCard)
+    forgenerate($i,0,$m){
+        hasCard_$i = 0
+    }
 }
 def takeAllParticule(){
-	int $m = fromconst(nbParticules)
-	forgenerate($i,0,$m){
-		hasParticule_$i = false
-	}
+    int $m = fromconst(nbParticules)
+    forgenerate($i,0,$m){
+        hasParticule_$i = false
+    }
 }
 def takeAllHat(){
-	int $m = fromconst(nbHats)
-	forgenerate($i,0,$m){
-		hasHat_$i = false
-	}
+    int $m = fromconst(nbHats)
+    forgenerate($i,0,$m){
+        hasHat_$i = false
+    }
 }
 def takeAllVehicle(){
-	int $m = fromconst(nbVehicles)
-	forgenerate($i,0,$m){
-		hasVehicle_$i = false
-	}
+    int $m = fromconst(nbVehicles)
+    forgenerate($i,0,$m){
+        hasVehicle_$i = false
+    }
 }
